@@ -20,10 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f4b3127-581b-47d1-a470-80a2fd652257" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/gui/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/gui/MyTunes.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/be/Playlist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/be/Song.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyTunes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyTunes.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -92,7 +91,7 @@
       <updated>1606469081543</updated>
       <workItem from="1606730561076" duration="4737000" />
       <workItem from="1606813533849" duration="116000" />
-      <workItem from="1606813755485" duration="1337000" />
+      <workItem from="1606813755485" duration="2559000" />
     </task>
     <servers />
   </component>
@@ -111,13 +110,13 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="262" y="76" key="SettingsEditor" timestamp="1606814956331">
+    <state x="262" y="76" key="SettingsEditor" timestamp="1606815201686">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
-    <state x="262" y="76" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606814956331" />
-    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606814695020">
+    <state x="262" y="76" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606815201686" />
+    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606815199409">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
-    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1563.1002@0.0.1563.1002" timestamp="1606814695020" />
+    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1563.1002@0.0.1563.1002" timestamp="1606815199409" />
   </component>
 </project>

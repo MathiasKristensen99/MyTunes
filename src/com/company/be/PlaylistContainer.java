@@ -12,8 +12,10 @@ public class PlaylistContainer {
         public PlaylistsContainer() {
             playlistsContainer = new ArrayList<>();
         }
+
         public void loadSongs(File file, int index) throws IOException {
             playlistsContainer.get(index).loadSongs(file);
         }
 
     }
+}

@@ -21,7 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8f4b3127-581b-47d1-a470-80a2fd652257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/MyTunes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyTunes.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/be/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/be/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/bll/SongManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/bll/SongManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" afterDir="false" />
+>>>>>>> 7891e7ce864a5288614b72ba07ad05227ef1318f
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,18 +60,36 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28735632" />
   </component>
   <component name="RunManager">
+<<<<<<< HEAD
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+=======
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="MyTunes" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+>>>>>>> 7891e7ce864a5288614b72ba07ad05227ef1318f
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -90,7 +115,8 @@
       <updated>1606469081543</updated>
       <workItem from="1606730561076" duration="4737000" />
       <workItem from="1606813533849" duration="116000" />
-      <workItem from="1606813755485" duration="1337000" />
+      <workItem from="1606813755485" duration="5875000" />
+      <workItem from="1606901256281" duration="4758000" />
     </task>
     <servers />
   </component>
@@ -110,13 +136,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="262" y="76" key="SettingsEditor" timestamp="1606814956331">
+    <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1606902103021">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
-    <state x="262" y="76" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606814956331" />
-    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606814695020">
+    <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1563.1002@0.0.1563.1002" timestamp="1606902103021" />
+    <state x="562" y="243" key="FileChooserDialogImpl" timestamp="1606906124040">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
-    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1563.1002@0.0.1563.1002" timestamp="1606814695020" />
+    <state x="562" y="243" key="FileChooserDialogImpl/0.0.1563.1002@0.0.1563.1002" timestamp="1606906124040" />
+    <state x="262" y="76" key="SettingsEditor" timestamp="1606906571521">
+      <screen x="0" y="0" width="1563" height="1002" />
+    </state>
+    <state x="262" y="76" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606906571521" />
+    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606906285088">
+      <screen x="0" y="0" width="1563" height="1002" />
+    </state>
+    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1563.1002@0.0.1563.1002" timestamp="1606906285088" />
+    <state x="186" y="249" key="refactoring.ChangeSignatureDialog" timestamp="1606906635244">
+      <screen x="0" y="0" width="1563" height="1002" />
+    </state>
+    <state x="186" y="249" key="refactoring.ChangeSignatureDialog/0.0.1563.1002@0.0.1563.1002" timestamp="1606906635244" />
   </component>
 </project>

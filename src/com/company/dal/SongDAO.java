@@ -30,8 +30,8 @@ public class SongDAO {
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sqlStatement);
             while (rs.next()) {
-                Song son = new Song(rs.getString("name"), rs.getString("artist"), rs.getString("genre"), rs.getInt("time"), rs.getInt("id"), playtime);
-                allSongs.add(son);
+                Song song = new Song(rs.getString("name"), rs.getString("artist"), rs.getString("genre"), rs.getInt("time"), rs.getInt("id"));
+                allSongs.add(song);
             }
             return allSongs;
         } catch (SQLServerException ex) {
@@ -60,5 +60,58 @@ public class SongDAO {
         }
         Song song = new Song(title, artist, genre, playtime, getNewestSongID());
         return song;
+    }
+
+    private int getNewestSongID() {
+        int newestID = -1;
+        try (Connection con = ds.getConnection()) {
+            String query = "SELECT TOP(1) * FROM Song ORDER by id desc";
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+            ResultSet rs = preparedStmt.executeQuery();
+            while (rs.next()) {
+                newestID = rs.getInt("id");
+            }
+            return newestID;
+        } catch (SQLServerException ex) {
+            System.out.println(ex);
+            return newestID;
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            return newestID;
+        }
+    }
+
+    public Song updateSong(Song song, String title, String artist, String genre, int playtime) {
+        try (Connection con = ds.getConnection()) {
+            String query = "UPDATE Song set name = ?,artist = ?,category = ?,time = ?,url = ? WHERE id = ?";
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+            preparedStmt.setString(1, title);
+            preparedStmt.setString(2, artist);
+            preparedStmt.setString(3, genre);
+            preparedStmt.setInt(4, playtime);
+            preparedStmt.setInt(6, song.getID());
+            preparedStmt.executeUpdate();
+            Song son = new Song(title, artist, genre, playtime, song.getID());
+            return son;
+        } catch (SQLServerException ex) {
+            System.out.println(ex);
+            return null;
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            return null;
+        }
+    }
+    
+    public void deleteSong(Song songToDelete) {
+        try (Connection con = ds.getConnection()) {
+            String query = "DELETE from Song WHERE id = ?";
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+            preparedStmt.setInt(1, songToDelete.getID());
+            preparedStmt.execute();
+        } catch (SQLServerException ex) {
+            System.out.println(ex);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
     }
 }

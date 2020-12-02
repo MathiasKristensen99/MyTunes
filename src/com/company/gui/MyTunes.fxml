@@ -11,45 +11,116 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.gui.Controller">
+<AnchorPane prefHeight="390.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.gui.Controller">
    <children>
-      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" text="Close">
+      <Button layoutX="526.0" layoutY="340.0" mnemonicParsing="false" scaleX="1.1" text="Close">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
+         <font>
+            <Font size="10.0" />
+         </font>
       </Button>
-      <Button layoutX="482.0" layoutY="361.0" mnemonicParsing="false" text="Delete" />
-      <Button layoutX="430.0" layoutY="361.0" mnemonicParsing="false" text="Edit.." />
-      <Button layoutX="378.0" layoutY="361.0" mnemonicParsing="false" text="New.." />
-      <Button layoutX="326.0" layoutY="361.0" mnemonicParsing="false" text="Delete" />
-      <Button layoutX="274.0" layoutY="361.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="222.0" layoutY="361.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="170.0" layoutY="361.0" mnemonicParsing="false" text="Delete" />
-      <Button layoutX="118.0" layoutY="361.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="66.0" layoutY="361.0" mnemonicParsing="false" text="Button" />
-      <TableView layoutX="18.0" layoutY="89.0" prefHeight="239.0" prefWidth="167.0">
+      <Button layoutX="463.0" layoutY="340.0" mnemonicParsing="false" scaleX="1.1" text="Delete">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Button layoutX="408.0" layoutY="340.0" mnemonicParsing="false" scaleX="1.1" text="Edit..">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Button layoutX="351.0" layoutY="340.0" mnemonicParsing="false" scaleX="1.1" text="New..">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Button layoutX="261.0" layoutY="340.0" mnemonicParsing="false" scaleX="1.1" text="Delete">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Button layoutX="126.0" layoutY="340.0" mnemonicParsing="false" scaleX="1.1" text="Delete">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Button layoutX="66.0" layoutY="340.0" mnemonicParsing="false" scaleX="1.1" text="Edit..">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Button layoutX="10.0" layoutY="340.0" mnemonicParsing="false" scaleX="1.1" text="New..">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <TableView layoutX="11.0" layoutY="89.0" prefHeight="239.0" prefWidth="163.0">
         <columns>
           <TableColumn prefWidth="52.79998779296875" text="Name" />
           <TableColumn prefWidth="55.20001220703125" text="Songs" />
-            <TableColumn prefWidth="57.5999755859375" text="Time" />
+            <TableColumn prefWidth="53.60002441406249" text="Time" />
         </columns>
       </TableView>
-      <ListView layoutX="197.0" layoutY="89.0" prefHeight="239.0" prefWidth="139.0" />
-      <Label layoutX="18.0" layoutY="70.0" text="Playlist" />
-      <Label layoutX="197.0" layoutY="70.0" text="Songs on Playlist" />
+      <ListView layoutX="189.0" layoutY="89.0" prefHeight="239.0" prefWidth="126.0" />
+      <Label layoutX="15.0" layoutY="70.0" text="Playlist" />
+      <Label layoutX="190.0" layoutY="70.0" text="Songs on Playlist" />
       <Label layoutX="351.0" layoutY="70.0" text="Songs" />
-      <TextField layoutX="408.0" layoutY="31.0" prefHeight="26.0" prefWidth="118.0" />
-      <Label layoutX="366.0" layoutY="35.0" text="Search" />
-      <Slider layoutX="22.0" layoutY="50.0" />
+      <TextField layoutX="414.0" layoutY="30.0" prefHeight="26.0" prefWidth="118.0" />
+      <Label layoutX="377.0" layoutY="34.0" text="Filter:" />
+      <Slider layoutX="22.0" layoutY="50.0" prefHeight="14.0" prefWidth="146.0" />
       <ImageView fitHeight="26.0" fitWidth="33.0" layoutX="76.0" layoutY="18.0">
          <image>
             <Image url="@../../../../Data/Pictures/pauseButton.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="76.0" layoutY="14.0">
+      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="118.0" layoutY="14.0">
          <image>
-            <Image url="@../../../../Data/Pictures/playButton.png" />
+            <Image url="@../../../../Data/Pictures/farstForward.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="33.0" layoutY="14.0" rotate="180.0">
+         <image>
+            <Image url="@../../../../Data/Pictures/farstForwardd.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="533.0" layoutY="27.0">
+         <image>
+            <Image url="@../../../../Data/Pictures/sherlock.png" />
+         </image>
+      </ImageView>
+      <TableView layoutX="351.0" layoutY="89.0" prefHeight="239.0" prefWidth="223.0">
+        <columns>
+          <TableColumn prefWidth="56.00006103515625" text="Title" />
+          <TableColumn prefWidth="52.800048828125" text="Artist" />
+            <TableColumn prefWidth="55.20001220703125" text="Category" />
+            <TableColumn prefWidth="63.199951171875" text="Time" />
+        </columns>
+      </TableView>
+      <Button layoutX="319.0" layoutY="89.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+      <Button layoutX="192.0" layoutY="332.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+      <Button layoutX="226.0" layoutY="332.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="322.0" layoutY="92.0" rotate="180.0">
+         <image>
+            <Image url="@../../../../Data/Pictures/Arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="195.0" layoutY="335.0" rotate="270.0">
+         <image>
+            <Image url="@../../../../Data/Pictures/Arroww.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="229.0" layoutY="335.0" rotate="90.0">
+         <image>
+            <Image url="@../../../../Data/Pictures/Arrowww.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="76.0" layoutY="15.0">
+         <image>
+            <Image url="@../../../../Data/Pictures/pauseButton.png" />
+         </image>
+      </ImageView>
+      <TextFlow layoutX="201.0" layoutY="29.0" prefHeight="26.0" prefWidth="163.0" />
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="73.0" layoutY="11.0">
+         <image>
+            <Image url="@../../../../Data/Pictures/officialPlayButton.png" />
          </image>
       </ImageView>
    </children>

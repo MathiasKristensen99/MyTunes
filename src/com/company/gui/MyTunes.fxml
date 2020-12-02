@@ -8,8 +8,9 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.gui.Controller">
    <children>
@@ -40,6 +41,16 @@
       <Label layoutX="351.0" layoutY="70.0" text="Songs" />
       <TextField layoutX="408.0" layoutY="31.0" prefHeight="26.0" prefWidth="118.0" />
       <Label layoutX="366.0" layoutY="35.0" text="Search" />
-      <Slider layoutX="48.0" layoutY="50.0" />
+      <Slider layoutX="22.0" layoutY="50.0" />
+      <ImageView fitHeight="26.0" fitWidth="33.0" layoutX="76.0" layoutY="18.0">
+         <image>
+            <Image url="@../../../../Data/Pictures/pauseButton.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="76.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../../Data/Pictures/playButton.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -6,7 +6,7 @@ public class Song {
     private File song;
     private String title;
     private String artist;
-    private String category;
+    private String genre;
     private final int playtime;
     private final int ID;
 
@@ -14,7 +14,7 @@ public class Song {
         song = new File (Song.class.getResource(songPath).getFile());
         this.title = title;
         this.artist = artist;
-        this.category = category;
+        this.genre = category;
         this.playtime = playtime;
         ID = id;
     }
@@ -44,11 +44,11 @@ public class Song {
     }
 
     public String getCategory() {
-        return category;
+        return genre;
     }
 
     public void setCategory(String category) {
-        this.category = category;
+        this.genre = category;
     }
 
     public int getPlaytime() {
@@ -63,5 +63,5 @@ public class Song {
         return song;
     }
 
-    //TODO To string metoder
+    //TODO Tostring metoder
 }

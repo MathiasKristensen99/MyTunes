@@ -1,35 +1,70 @@
 package com.company.be;
 
-import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Playlist {
     private List<Song> playlist;
+    private String playlistName;
+    private int ID;
+    private int songCount;
+    private int totalPlaytime;
+    private final String totalPlaytimeString;
 
-    public Playlist() {
-        playlist = new ArrayList<>();
+    public Playlist(List<Song> playlist, String playlistName, int id, int songCount, int totalPlaytime, String totalPlaytimeString) {
+        this.playlist = playlist;
+        this.playlistName = playlistName;
+        ID = id;
+        this.songCount = songCount;
+        this.totalPlaytime = totalPlaytime;
+        this.totalPlaytimeString = totalPlaytimeString;
     }
-    public void loadSongs(File fin) throws IOException {
-        FileInputStream fis = new FileInputStream(fin);
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(fis));
-
-        String line = null;
-
-        while ((line = br.readLine()) != null) {
-            playlist.add(new Song(line));
-        }
-
-        br.close();
+    public List<Song> getPlaylist() {
+        return playlist;
     }
-    public Song get(int index) {
-        return playlist.get(index);
+
+    public void setPlaylist(List<Song> playlist) {
+        this.playlist = playlist;
     }
+
+    public String getPlaylistName() {
+        return playlistName;
+    }
+
+    public void setPlaylistName(String playlistName) {
+        this.playlistName = playlistName;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getSongCount() {
+        return songCount;
+    }
+
+    public void setSongCount(int songCount) {
+        this.songCount = songCount;
+    }
+
+    public int getTotalPlaytime() {
+        return totalPlaytime;
+    }
+
+    public void setTotalPlaytime(int totalPlaytime) {
+        this.totalPlaytime = totalPlaytime;
+    }
+
+    public String getTotalPlaytimeString() {
+        return totalPlaytimeString;
+    }
+
     public Song getSong(int currentSongIndex) {
         return playlist.get(currentSongIndex);
     }
-    public int getCount() {
-        return playlist.size();
-    }
+    //TODO To string metoder
 }

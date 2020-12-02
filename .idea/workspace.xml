@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f4b3127-581b-47d1-a470-80a2fd652257" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/dal/PlaylistDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/be/PlaylistContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/be/PlaylistContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/be/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/be/Playlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/be/PlaylistContainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/be/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/be/Song.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,13 +74,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,6 +99,7 @@
       <workItem from="1606730561076" duration="4737000" />
       <workItem from="1606813533849" duration="116000" />
       <workItem from="1606813755485" duration="5875000" />
+      <workItem from="1606901256281" duration="1427000" />
     </task>
     <servers />
   </component>
@@ -112,6 +119,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1606902103021">
+      <screen x="0" y="0" width="1563" height="1002" />
+    </state>
+    <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1563.1002@0.0.1563.1002" timestamp="1606902103021" />
     <state x="262" y="76" key="SettingsEditor" timestamp="1606815201686">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
@@ -120,5 +131,9 @@
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
     <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1563.1002@0.0.1563.1002" timestamp="1606815199409" />
+    <state x="186" y="249" key="refactoring.ChangeSignatureDialog" timestamp="1606901495979">
+      <screen x="0" y="0" width="1563" height="1002" />
+    </state>
+    <state x="186" y="249" key="refactoring.ChangeSignatureDialog/0.0.1563.1002@0.0.1563.1002" timestamp="1606901495979" />
   </component>
 </project>

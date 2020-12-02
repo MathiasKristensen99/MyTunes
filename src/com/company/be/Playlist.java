@@ -66,5 +66,5 @@ public class Playlist {
     public Song getSong(int currentSongIndex) {
         return playlist.get(currentSongIndex);
     }
-    //TODO To string metoder
+    //TODO Tostring metoder
 }

@@ -43,7 +43,7 @@ public class SongDAO {
         }
     }
 
-    public Song createSong(String title, String artist, String genre, int playtime) {
+    public Song addSong(String title, String artist, String genre, int playtime, String location) {
         String sql = "INSERT INTO Song(name,artist,genre,time,url) VALUES (?,?,?,?,?)";
         try (Connection con = ds.getConnection()) {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -51,6 +51,7 @@ public class SongDAO {
             ps.setString(2, artist);
             ps.setString(3, genre);
             ps.setInt(4, playtime);
+            ps.setString(5, location);
             ps.addBatch();
             ps.executeBatch();
         } catch (SQLServerException ex) {
@@ -81,7 +82,7 @@ public class SongDAO {
         }
     }
 
-    public Song updateSong(Song song, String title, String artist, String genre, int playtime) {
+    public Song updateSong(Song song, String title, String artist, String genre, int playtime, String location) {
         try (Connection con = ds.getConnection()) {
             String query = "UPDATE Song set name = ?,artist = ?,category = ?,time = ?,url = ? WHERE id = ?";
             PreparedStatement preparedStmt = con.prepareStatement(query);
@@ -89,6 +90,7 @@ public class SongDAO {
             preparedStmt.setString(2, artist);
             preparedStmt.setString(3, genre);
             preparedStmt.setInt(4, playtime);
+            preparedStmt.setString(5, location);
             preparedStmt.setInt(6, song.getID());
             preparedStmt.executeUpdate();
             Song son = new Song(title, artist, genre, playtime, song.getID());
@@ -102,16 +104,17 @@ public class SongDAO {
         }
     }
 
-    public void deleteSong(Song songToDelete) {
+    public Song deleteSong(Song songDelete) {
         try (Connection con = ds.getConnection()) {
             String query = "DELETE from Song WHERE id = ?";
             PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setInt(1, songToDelete.getID());
+            preparedStmt.setInt(1, songDelete.getID());
             preparedStmt.execute();
         } catch (SQLServerException ex) {
             System.out.println(ex);
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+        return songDelete;
     }
 }

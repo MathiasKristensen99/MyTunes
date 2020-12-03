@@ -13,7 +13,7 @@ public class PlaylistSongsDAO {
 
     public PlaylistSongsDAO() throws IOException {
         this.ds = new SQLServerDataSource();
-        DatabaseConnectionDAO connectionInfo = new DatabaseConnectionDAO();
+        DatabaseDAO connectionInfo = new DatabaseDAO();
         List<String> infoList = connectionInfo.getDatabaseInfo();
         ds.setDatabaseName(infoList.get(0));
         ds.setUser(infoList.get(1));
@@ -25,7 +25,5 @@ public class PlaylistSongsDAO {
 
     public List<Song> getPlaylistSongs(int id) {
         List<Song> newSongList = new ArrayList();
-
-
-
+    }
 }

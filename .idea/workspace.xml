@@ -54,11 +54,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../projekt mytunes/MyTunesAssignment-master" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.42068964" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.company.dal" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -67,6 +76,17 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,17 +128,24 @@
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
     <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1563.1002@0.0.1563.1002" timestamp="1606902103021" />
-    <state x="562" y="243" key="FileChooserDialogImpl" timestamp="1606906124040">
-      <screen x="0" y="0" width="1563" height="1002" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606990755736">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1606990755736" />
+    <state x="460" y="165" key="FileChooserDialogImpl" timestamp="1606989708441">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="460" y="165" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1606989708441" />
     <state x="562" y="243" key="FileChooserDialogImpl/0.0.1563.1002@0.0.1563.1002" timestamp="1606906124040" />
-    <state x="262" y="76" key="SettingsEditor" timestamp="1606907785105">
-      <screen x="0" y="0" width="1563" height="1002" />
+    <state x="215" y="0" key="SettingsEditor" timestamp="1606988994849">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="215" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1606988994849" />
     <state x="262" y="76" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606907785105" />
-    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606906285088">
-      <screen x="0" y="0" width="1563" height="1002" />
+    <state x="415" y="267" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606988977824">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="415" y="267" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.680@0.0.1280.680" timestamp="1606988977824" />
     <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1563.1002@0.0.1563.1002" timestamp="1606906285088" />
     <state x="186" y="249" key="refactoring.ChangeSignatureDialog" timestamp="1606906635244">
       <screen x="0" y="0" width="1563" height="1002" />

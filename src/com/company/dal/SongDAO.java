@@ -43,11 +43,7 @@ public class SongDAO {
         }
     }
 
-<<<<<<< Updated upstream
     public Song addSong(String title, String artist, String genre, int playtime, String location) {
-=======
-    public Song createSong(String title, String artist, String genre, int playtime, String location) {
->>>>>>> Stashed changes
         String sql = "INSERT INTO Song(name,artist,genre,time,url) VALUES (?,?,?,?,?)";
         try (Connection con = ds.getConnection()) {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -94,16 +90,11 @@ public class SongDAO {
             preparedStmt.setString(2, artist);
             preparedStmt.setString(3, genre);
             preparedStmt.setInt(4, playtime);
-<<<<<<< Updated upstream
             preparedStmt.setString(5, location);
             preparedStmt.setInt(6, song.getID());
-=======
-            preparedStmt.setInt(5, song.getID());
-            preparedStmt.setString(6, location);
->>>>>>> Stashed changes
             preparedStmt.executeUpdate();
-            Song track = new Song(title, artist, genre, playtime, song.getID());
-            return track;
+            Song son = new Song(title, artist, genre, playtime, song.getID());
+            return son;
         } catch (SQLServerException ex) {
             System.out.println(ex);
             return null;

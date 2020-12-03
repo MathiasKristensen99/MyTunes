@@ -21,11 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8f4b3127-581b-47d1-a470-80a2fd652257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTunes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyTunes.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/bll/SongManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/bll/SongManager.java" afterDir="false" />
-<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/com/company/dal/PlaylistSongsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/dal/PlaylistSongsDAO.java" afterDir="false" />
-=======
->>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,22 +60,21 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.42068964" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.company.dal" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mathias Surface Pro\Documents\GitHub\MyTunes\src\com\company\gui\view" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="MyTunes" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/Desktop/javafx-sdk-15/lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -95,6 +92,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -108,12 +110,11 @@
       <workItem from="1606813533849" duration="116000" />
       <workItem from="1606813755485" duration="5875000" />
       <workItem from="1606901256281" duration="6151000" />
-<<<<<<< Updated upstream
       <workItem from="1606908227951" duration="1266000" />
-=======
       <workItem from="1606908227951" duration="1695000" />
       <workItem from="1606987808882" duration="3632000" />
->>>>>>> Stashed changes
+      <workItem from="1606908227951" duration="1695000" />
+      <workItem from="1606987808882" duration="648000" />
     </task>
     <servers />
   </component>
@@ -133,28 +134,43 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1606902103021">
+    <state x="218" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606990677972">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="237" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1563.1002@0.0.1563.1002" timestamp="1606988151544" />
+    <state x="218" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1606990677972" />
+    <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1606987912816">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
-    <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1563.1002@0.0.1563.1002" timestamp="1606902103021" />
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606990755736">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1563.1002@0.0.1563.1002" timestamp="1606987912816" />
+    <state x="562" y="243" key="FileChooserDialogImpl" timestamp="1606906124040">
+      <screen x="0" y="0" width="1563" height="1002" />
     </state>
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1606990755736" />
-    <state x="460" y="165" key="FileChooserDialogImpl" timestamp="1606989708441">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="460" y="165" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1606989708441" />
     <state x="562" y="243" key="FileChooserDialogImpl/0.0.1563.1002@0.0.1563.1002" timestamp="1606906124040" />
-<<<<<<< Updated upstream
-    <state x="215" y="0" key="SettingsEditor" timestamp="1606988994849">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="215" y="0" key="SettingsEditor" timestamp="1606988994849" />
+    <screen x="0" y="0" width="1280" height="680" />
+    <state width="1520" height="215" key="GridCell.Tab.0.bottom" timestamp="1606988153531">
+      <screen x="0" y="0" width="1563" height="1002" />
     </state>
-    <state x="215" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1606988994849" />
+    <state width="1520" height="215" key="GridCell.Tab.0.bottom/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
+    <state width="1520" height="215" key="GridCell.Tab.0.center" timestamp="1606988153531">
+      <screen x="0" y="0" width="1563" height="1002" />
+    </state>
+    <state width="1520" height="215" key="GridCell.Tab.0.center/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
+    <state width="1520" height="215" key="GridCell.Tab.0.left" timestamp="1606988153531">
+      <screen x="0" y="0" width="1563" height="1002" />
+    </state>
+    <state width="1520" height="215" key="GridCell.Tab.0.left/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
+    <state width="1520" height="215" key="GridCell.Tab.0.right" timestamp="1606988153531">
+      <screen x="0" y="0" width="1563" height="1002" />
+    </state>
+    <state width="1520" height="215" key="GridCell.Tab.0.right/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
+    <state x="241" y="23" key="SettingsEditor" timestamp="1606990814309">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
     <state x="262" y="76" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606907785105" />
-    <state x="415" y="267" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606988977824">
-      <screen x="0" y="0" width="1280" height="680" />
-=======
+    <state x="415" y="267" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606988977824" />
+    <screen x="0" y="0" width="1280" height="680" />
     <state width="1520" height="215" key="GridCell.Tab.0.bottom" timestamp="1606988153531">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
@@ -175,12 +191,14 @@
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
     <state x="291" y="59" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606989233259" />
-    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606906285088">
-      <screen x="0" y="0" width="1563" height="1002" />
->>>>>>> Stashed changes
+    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606906285088" />
+    <screen x="0" y="0" width="1563" height="1002" />
+    <state x="241" y="23" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1606990814309" />
+    <state x="467" y="342" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606990771576">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state x="415" y="267" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.680@0.0.1280.680" timestamp="1606988977824" />
     <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1563.1002@0.0.1563.1002" timestamp="1606906285088" />
+    <state x="467" y="342" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.813@0.23.1440.813" timestamp="1606990771576" />
     <state x="186" y="249" key="refactoring.ChangeSignatureDialog" timestamp="1606906635244">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>

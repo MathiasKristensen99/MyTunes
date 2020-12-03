@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8f4b3127-581b-47d1-a470-80a2fd652257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gui/MyTunes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/gui/view/MyTunes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTunes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyTunes.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.42068964" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -81,7 +79,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="MyTunes" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Mathias Surface Pro\OneDrive\Dokumenter\Datamatiker\SCO1\Java SDK\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/Desktop/javafx-sdk-15/lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -127,10 +125,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="237" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606988151544">
-      <screen x="0" y="0" width="1563" height="1002" />
+    <state x="218" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606990677972">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="237" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1563.1002@0.0.1563.1002" timestamp="1606988151544" />
+    <state x="218" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1606990677972" />
     <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1606987912816">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
@@ -155,14 +154,16 @@
       <screen x="0" y="0" width="1563" height="1002" />
     </state>
     <state width="1520" height="215" key="GridCell.Tab.0.right/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
-    <state x="262" y="76" key="SettingsEditor" timestamp="1606907785105">
-      <screen x="0" y="0" width="1563" height="1002" />
+    <state x="241" y="23" key="SettingsEditor" timestamp="1606990814309">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="262" y="76" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606907785105" />
-    <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606906285088">
-      <screen x="0" y="0" width="1563" height="1002" />
+    <state x="241" y="23" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1606990814309" />
+    <state x="467" y="342" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606990771576">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1563.1002@0.0.1563.1002" timestamp="1606906285088" />
+    <state x="467" y="342" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.813@0.23.1440.813" timestamp="1606990771576" />
     <state x="186" y="249" key="refactoring.ChangeSignatureDialog" timestamp="1606906635244">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>

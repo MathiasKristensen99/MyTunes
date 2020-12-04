@@ -24,7 +24,7 @@ public class SongDAO {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sqlStatement);
             while (rs.next()) {
-                Song song = new Song(rs.getString("name"), rs.getString("artist"), rs.getString("genre"), rs.getInt("time"), rs.getInt("id"));
+                Song song = new Song(rs.getString("name"), rs.getString("artist"), rs.getString("genre"), rs.getString("location"), rs.getInt("time"), rs.getInt("id"));
                 allSongs.add(song);
             }
             return allSongs;
@@ -53,7 +53,7 @@ public class SongDAO {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        Song song = new Song(title, artist, genre, playtime, getNewestSongID());
+        Song song = new Song(title, artist, genre, location, playtime, getNewestSongID());
         return song;
     }
 
@@ -78,7 +78,7 @@ public class SongDAO {
 
     public Song updateSong(Song song, String title, String artist, String genre, int playtime, String location) {
         try (Connection connection = databaseConnector.getConnection()) {
-            String query = "UPDATE Song set name = ?,artist = ?,category = ?,time = ?,url = ? WHERE id = ?";
+            String query = "UPDATE Song set name = ?,artist = ?,genre = ?,time = ?,url = ? WHERE id = ?";
             PreparedStatement preparedStmt = connection.prepareStatement(query);
             preparedStmt.setString(1, title);
             preparedStmt.setString(2, artist);
@@ -87,7 +87,7 @@ public class SongDAO {
             preparedStmt.setString(5, location);
             preparedStmt.setInt(6, song.getID());
             preparedStmt.executeUpdate();
-            Song son = new Song(title, artist, genre, playtime, song.getID());
+            Song son = new Song(title, artist, genre, location, playtime, song.getID());
             return son;
         } catch (SQLServerException ex) {
             System.out.println(ex);

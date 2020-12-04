@@ -10,28 +10,21 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaylistDAO<DatabaseConnectionDAO> {
+public class PlaylistDAO {
 
-    PlaylistSongsDAO PlaylistSongInfo = new PlaylistSongsDAO();
-    SQLServerDataSource ds;
+    private DatabaseDAO databaseConnector;
+
 
     public PlaylistDAO() throws IOException {
+        databaseConnector = new DatabaseDAO();
     }
-    this.ds = new SQLServerDataSource();
-    DatabaseConnectionDAO connectionInfo = new DatabaseConnectionDAO();
-    List<String> infoList = connectionInfo.getDatabaseInfo();
-        ds.setDatabaseName(infoList.get(0));
-        ds.setUser(infoList.get(1));
-        ds.setPassword(infoList.get(2));
-        ds.setPortNumber(Integer.parseInt(infoList.get(3)));
-        ds.setServerName(infoList.get(4));
-}
+
     public List<Playlist> getAllPlaylists() {
         List<Playlist> allPlaylists = new ArrayList<>();
 
-        try (Connection con = ds.getConnection()) {
+        try (Connection connection = databaseConnector.getConnection()) {
             String sqlStatement = "SELECT * FROM Playlist";
-            Statement statement = con.createStatement();
+            Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sqlStatement);
             while (rs.next()) {
                 String name = rs.getString("name");
@@ -61,8 +54,8 @@ public class PlaylistDAO<DatabaseConnectionDAO> {
     }
     public Playlist createPlaylist(String name) {
         String sql = "INSERT INTO Playlist(name) VALUES (?)";
-        try (Connection con = ds.getConnection()) {
-            PreparedStatement ps = con.prepareStatement(sql);
+        try (Connection connection = databaseConnector.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, name);
             ps.addBatch();
             ps.executeBatch();
@@ -76,9 +69,9 @@ public class PlaylistDAO<DatabaseConnectionDAO> {
     }
     private int getNewestPlaylist() {
         int newestID = -1;
-        try (Connection con = ds.getConnection()) {
+        try (Connection connection = databaseConnector.getConnection()) {
             String query = "SELECT TOP(1) * FROM Playlist ORDER by id desc";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
             ResultSet rs = preparedStmt.executeQuery();
             while (rs.next()) {
                 newestID = rs.getInt("id");
@@ -93,9 +86,9 @@ public class PlaylistDAO<DatabaseConnectionDAO> {
         }
     }
     public void updatePlaylist(Playlist selectedItem, String name) {
-        try (Connection con = ds.getConnection()) {
+        try (Connection connection = databaseConnector.getConnection()) {
             String query = "UPDATE Playlist set name = ? WHERE id = ?";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
             preparedStmt.setString(1, name);
             preparedStmt.setInt(2, selectedItem.getID());
             preparedStmt.executeUpdate();
@@ -106,9 +99,9 @@ public class PlaylistDAO<DatabaseConnectionDAO> {
         }
     }
     public void deletePlaylist(Playlist play) {
-        try (Connection con = ds.getConnection()) {
+        try (Connection connection = databaseConnector.getConnection()) {
             String query = "DELETE from Playlist WHERE id = ?";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
             preparedStmt.setInt(1, play.getID());
             preparedStmt.execute();
         } catch (SQLServerException ex) {

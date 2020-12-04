@@ -11,19 +11,4 @@ public class PlaylistSongsDAO {
 
     SQLServerDataSource ds;
 
-    public PlaylistSongsDAO() throws IOException {
-        this.ds = new SQLServerDataSource();
-        DatabaseDAO connectionInfo = new DatabaseDAO();
-        List<String> infoList = connectionInfo.getDatabaseInfo();
-        ds.setDatabaseName(infoList.get(0));
-        ds.setUser(infoList.get(1));
-        ds.setPassword(infoList.get(2));
-        ds.setPortNumber(Integer.parseInt(infoList.get(3)));
-        ds.setServerName(infoList.get(4));
-    }
-
-
-    public List<Song> getPlaylistSongs(int id) {
-        List<Song> newSongList = new ArrayList();
-    }
 }

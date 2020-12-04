@@ -1,30 +1,35 @@
 package com.company.dal;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
+import com.microsoft.sqlserver.jdbc.SQLServerException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 
 public class DatabaseDAO {
-    public List<String> getDatabaseInfo() throws IOException {
-        List<String> info = new ArrayList();
-        String source = "data/loginDetails.txt";
-        File file = new File(source);
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (!line.isEmpty()) {
-                    try {
-                        info.add(line);
-                    } catch (Exception ex) {
-                        System.out.println(ex);
-                    }
-                }
-            }
-        }
-        return info;
+    private SQLServerDataSource dataSource;
+
+    public DatabaseDAO() {
+        dataSource = new SQLServerDataSource();
+        dataSource.setServerName("10.176.111.31");
+        dataSource.setDatabaseName("MyTunesAssignment");
+        dataSource.setUser("CSe20A_18");
+        dataSource.setPassword("CSe20A_18");
+        dataSource.setPortNumber(1433);
+    }
+
+    public Connection getConnection() throws SQLServerException {
+        return dataSource.getConnection();
+    }
+
+    public static void main(String[] args) throws SQLException {
+
+        DatabaseDAO databaseConnector = new DatabaseDAO();
+        Connection connection = databaseConnector.getConnection();
+
+        System.out.println("Is it open? " + !connection.isClosed());
+
+        connection.close();
     }
 }

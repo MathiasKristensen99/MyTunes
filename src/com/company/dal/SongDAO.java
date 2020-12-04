@@ -11,26 +11,20 @@ import java.util.List;
 
 public class SongDAO {
 
-    SQLServerDataSource ds;
+    private DatabaseDAO databaseConnector;
+
     public SongDAO() throws IOException {
-        this.ds = new SQLServerDataSource();
-        DatabaseDAO connectionInfo = new DatabaseDAO();
-        List<String> infoList = connectionInfo.getDatabaseInfo();
-        ds.setDatabaseName(infoList.get(0));
-        ds.setUser(infoList.get(1));
-        ds.setPassword(infoList.get(2));
-        ds.setPortNumber(Integer.parseInt(infoList.get(3)));
-        ds.setServerName(infoList.get(4));
+        databaseConnector = new DatabaseDAO();
     }
 
-    public List<Song> getAllSongs() {
+    public List<Song> getSongs() {
         List<Song> allSongs = new ArrayList<>();
-        try (Connection con = ds.getConnection()) {
+        try (Connection connection = databaseConnector.getConnection()) {
             String sqlStatement = "SELECT * FROM Song";
-            Statement statement = con.createStatement();
+            Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sqlStatement);
             while (rs.next()) {
-                Song song = new Song(rs.getString("name"), rs.getString("artist"), rs.getString("genre"), rs.getInt("time"), rs.getInt("id"));
+                Song song = new Song(rs.getString("name"), rs.getString("artist"), rs.getString("genre"), rs.getString("location"), rs.getInt("time"), rs.getInt("id"));
                 allSongs.add(song);
             }
             return allSongs;
@@ -43,14 +37,15 @@ public class SongDAO {
         }
     }
 
-    public Song createSong(String title, String artist, String genre, int playtime) {
+    public Song addSong(String title, String artist, String genre, int playtime, String location) {
         String sql = "INSERT INTO Song(name,artist,genre,time,url) VALUES (?,?,?,?,?)";
-        try (Connection con = ds.getConnection()) {
-            PreparedStatement ps = con.prepareStatement(sql);
+        try (Connection connection = databaseConnector.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, title);
             ps.setString(2, artist);
             ps.setString(3, genre);
             ps.setInt(4, playtime);
+            ps.setString(5, location);
             ps.addBatch();
             ps.executeBatch();
         } catch (SQLServerException ex) {
@@ -58,15 +53,15 @@ public class SongDAO {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        Song song = new Song(title, artist, genre, playtime, getNewestSongID());
+        Song song = new Song(title, artist, genre, location, playtime, getNewestSongID());
         return song;
     }
 
     private int getNewestSongID() {
         int newestID = -1;
-        try (Connection con = ds.getConnection()) {
+        try (Connection connection = databaseConnector.getConnection()) {
             String query = "SELECT TOP(1) * FROM Song ORDER by id desc";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
             ResultSet rs = preparedStmt.executeQuery();
             while (rs.next()) {
                 newestID = rs.getInt("id");
@@ -81,17 +76,18 @@ public class SongDAO {
         }
     }
 
-    public Song updateSong(Song song, String title, String artist, String genre, int playtime) {
-        try (Connection con = ds.getConnection()) {
-            String query = "UPDATE Song set name = ?,artist = ?,category = ?,time = ?,url = ? WHERE id = ?";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
+    public Song updateSong(Song song, String title, String artist, String genre, int playtime, String location) {
+        try (Connection connection = databaseConnector.getConnection()) {
+            String query = "UPDATE Song set name = ?,artist = ?,genre = ?,time = ?,url = ? WHERE id = ?";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
             preparedStmt.setString(1, title);
             preparedStmt.setString(2, artist);
             preparedStmt.setString(3, genre);
             preparedStmt.setInt(4, playtime);
+            preparedStmt.setString(5, location);
             preparedStmt.setInt(6, song.getID());
             preparedStmt.executeUpdate();
-            Song son = new Song(title, artist, genre, playtime, song.getID());
+            Song son = new Song(title, artist, genre, location, playtime, song.getID());
             return son;
         } catch (SQLServerException ex) {
             System.out.println(ex);
@@ -102,16 +98,17 @@ public class SongDAO {
         }
     }
 
-    public void deleteSong(Song songToDelete) {
-        try (Connection con = ds.getConnection()) {
+    public Song deleteSong(Song songDelete) {
+        try (Connection connection = databaseConnector.getConnection()) {
             String query = "DELETE from Song WHERE id = ?";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setInt(1, songToDelete.getID());
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setInt(1, songDelete.getID());
             preparedStmt.execute();
         } catch (SQLServerException ex) {
             System.out.println(ex);
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+        return songDelete;
     }
 }

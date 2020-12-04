@@ -21,9 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8f4b3127-581b-47d1-a470-80a2fd652257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/be/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/be/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/dal/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/dal/PlaylistDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gui/MyTunes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/gui/view/MyTunes.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,18 +55,48 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.42068964" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mathias Surface Pro\Documents\GitHub\MyTunes\src\com\company\gui\view" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager">
+=======
+  <component name="RunManager" selected="Application.DatabaseDAO">
+    <configuration name="DatabaseDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.dal.DatabaseDAO" />
+      <module name="MyTunes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.dal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="MyTunes" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/Desktop/javafx-sdk-15/lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+>>>>>>> a88c879c78c99ef3a6a5fa81efae64998362ff25
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -90,6 +120,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DatabaseDAO" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -106,8 +137,13 @@
       <workItem from="1606813533849" duration="116000" />
       <workItem from="1606813755485" duration="5875000" />
       <workItem from="1606901256281" duration="6151000" />
+      <workItem from="1606908227951" duration="1266000" />
+      <workItem from="1606908227951" duration="1695000" />
+      <workItem from="1606987808882" duration="3632000" />
       <workItem from="1606908227951" duration="1695000" />
       <workItem from="1606987808882" duration="648000" />
+      <workItem from="1607021962621" duration="655000" />
+      <workItem from="1607073476836" duration="5557000" />
     </task>
     <servers />
   </component>
@@ -127,39 +163,71 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="237" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606988151544">
-      <screen x="0" y="0" width="1563" height="1002" />
+    <state x="218" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606990677972">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="237" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1563.1002@0.0.1563.1002" timestamp="1606988151544" />
-    <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1606987912816">
-      <screen x="0" y="0" width="1563" height="1002" />
+    <state x="218" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1606990677972" />
+    <state x="321" y="303" key="#com.intellij.ide.util.MemberChooser" timestamp="1607090685421">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1563.1002@0.0.1563.1002" timestamp="1606987912816" />
+<<<<<<< HEAD
     <state x="552" y="200" key="FileChooserDialogImpl" timestamp="1606988994161">
       <screen x="0" y="0" width="1536" height="824" />
+=======
+    <state x="321" y="303" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607090685421" />
+    <state x="794" y="306" key="FileChooserDialogImpl" timestamp="1607075987885">
+      <screen x="0" y="0" width="2560" height="1400" />
+>>>>>>> a88c879c78c99ef3a6a5fa81efae64998362ff25
     </state>
     <state x="552" y="200" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606988994161" />
     <state x="562" y="243" key="FileChooserDialogImpl/0.0.1563.1002@0.0.1563.1002" timestamp="1606906124040" />
+<<<<<<< HEAD
     <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1607112478251">
       <screen x="0" y="0" width="1536" height="824" />
+=======
+    <state x="794" y="306" key="FileChooserDialogImpl/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607075987885" />
+    <state width="2517" height="185" key="GridCell.Tab.0.bottom" timestamp="1607089905762">
+      <screen x="0" y="0" width="2560" height="1400" />
+>>>>>>> a88c879c78c99ef3a6a5fa81efae64998362ff25
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607112478251" />
     <state width="1520" height="215" key="GridCell.Tab.0.bottom/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
+<<<<<<< HEAD
     <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1607112478250">
       <screen x="0" y="0" width="1536" height="824" />
+=======
+    <state width="2517" height="185" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607089905762" />
+    <state width="2517" height="185" key="GridCell.Tab.0.center" timestamp="1607089905762">
+      <screen x="0" y="0" width="2560" height="1400" />
+>>>>>>> a88c879c78c99ef3a6a5fa81efae64998362ff25
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607112478250" />
     <state width="1520" height="215" key="GridCell.Tab.0.center/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
+<<<<<<< HEAD
     <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1607112478250">
       <screen x="0" y="0" width="1536" height="824" />
+=======
+    <state width="2517" height="185" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607089905762" />
+    <state width="2517" height="185" key="GridCell.Tab.0.left" timestamp="1607089905762">
+      <screen x="0" y="0" width="2560" height="1400" />
+>>>>>>> a88c879c78c99ef3a6a5fa81efae64998362ff25
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607112478250" />
     <state width="1520" height="215" key="GridCell.Tab.0.left/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
+<<<<<<< HEAD
     <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1607112478251">
       <screen x="0" y="0" width="1536" height="824" />
+=======
+    <state width="2517" height="185" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607089905762" />
+    <state width="2517" height="185" key="GridCell.Tab.0.right" timestamp="1607089905762">
+      <screen x="0" y="0" width="2560" height="1400" />
+>>>>>>> a88c879c78c99ef3a6a5fa81efae64998362ff25
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607112478251" />
     <state width="1520" height="215" key="GridCell.Tab.0.right/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
+<<<<<<< HEAD
     <state x="257" y="0" key="SettingsEditor" timestamp="1606989048280">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -167,9 +235,26 @@
     <state x="262" y="76" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606907785105" />
     <state x="498" y="323" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606989022616">
       <screen x="0" y="0" width="1536" height="824" />
+=======
+    <state width="2517" height="185" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607089905762" />
+    <state x="477" y="82" key="SettingsEditor" timestamp="1607076941607">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="291" y="59" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606989233259" />
+    <state x="477" y="82" key="SettingsEditor/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607076941607" />
+    <state x="241" y="23" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1606990814309" />
+    <state x="830" y="549" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607076929805">
+      <screen x="0" y="0" width="2560" height="1400" />
+>>>>>>> a88c879c78c99ef3a6a5fa81efae64998362ff25
     </state>
     <state x="498" y="323" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1606989022616" />
     <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1563.1002@0.0.1563.1002" timestamp="1606906285088" />
+    <state x="830" y="549" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607076929805" />
+    <state x="467" y="342" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.813@0.23.1440.813" timestamp="1606990771576" />
+    <state x="1273" y="0" width="1294" height="1407" key="dock-window-1" timestamp="1607090743289">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1273" y="0" width="1294" height="1407" key="dock-window-1/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607090743289" />
     <state x="186" y="249" key="refactoring.ChangeSignatureDialog" timestamp="1606906635244">
       <screen x="0" y="0" width="1563" height="1002" />
     </state>

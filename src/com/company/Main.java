@@ -12,6 +12,10 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/MyTunes/src/com.company/gui/view/MyTunes.fxml"));
         Scene scene = new Scene(root);
+        Parent songRoot = FXMLLoader.load(getClass().getResource("/MyTunes/src/com.company/gui/view/Song.fxml"));
+        Scene song = new Scene(songRoot);
+        Parent playlistRoot = FXMLLoader.load(getClass().getResource("/MyTunes/src/com.company/gui/view/Playlist.fxml"));
+        Scene playlist = new Scene(playlistRoot);
         stage.setScene(scene);
         stage.show();
 

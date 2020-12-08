@@ -1,11 +1,9 @@
-package com.company.dal;
+package sample.dal;
 
-import com.company.be.Song;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 
 public class DatabaseDAO {

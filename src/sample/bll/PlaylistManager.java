@@ -1,4 +1,4 @@
-package com.company.bll;
+package sample.bll;
 
 public class PlaylistManager {
 }

@@ -1,4 +1,4 @@
-package com.company.be;
+package sample.be;
 
 public class Song {
 

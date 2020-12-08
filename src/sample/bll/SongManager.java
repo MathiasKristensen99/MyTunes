@@ -1,7 +1,7 @@
-package com.company.bll;
+package sample.bll;
 
-import com.company.be.Song;
-import com.company.dal.SongDAO;
+import sample.be.Song;
+import sample.dal.SongDAO;
 import java.util.List;
 
 

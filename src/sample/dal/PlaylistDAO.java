@@ -1,6 +1,7 @@
-package com.company.dal;
+package sample.dal;
 
-import com.company.be.Song;
+import sample.be.Playlist;
+import sample.be.Song;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 import java.io.IOException;
@@ -8,25 +9,33 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SongDAO {
+public class PlaylistDAO {
 
+    PlaylistSongDAO PlaylistSongInfo = new PlaylistSongDAO();
     private DatabaseDAO databaseConnector;
 
-    public SongDAO() throws IOException {
+
+    public PlaylistDAO() throws IOException {
         databaseConnector = new DatabaseDAO();
     }
 
-    public List<Song> getSongs() {
-        List<Song> allSongs = new ArrayList<>();
+    public List<Playlist> getAllPlaylists() {
+        List<Playlist> allPlaylists = new ArrayList<>();
+
         try (Connection connection = databaseConnector.getConnection()) {
-            String sqlStatement = "SELECT * FROM Song";
+            String sqlStatement = "SELECT * FROM Playlist";
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sqlStatement);
             while (rs.next()) {
-                Song song = new Song(rs.getString("title"), rs.getString("artist"), rs.getString("genre"), rs.getString("location"), rs.getInt("playtime"), rs.getInt("id"));
-                allSongs.add(song);
+                String name = rs.getString("name");
+                int id = rs.getInt("id");
+                List<Song> allSongs = PlaylistSongInfo.getPlaylistSongs(id);
+                Playlist pl = new Playlist(allSongs.size(), countTotalTime(allSongs), name, id);
+                pl.setSongList(allSongs);
+                allPlaylists.add(pl);
+
             }
-            return allSongs;
+            return allPlaylists; // Returns the playlists
         } catch (SQLServerException ex) {
             System.out.println(ex);
             return null;
@@ -36,15 +45,18 @@ public class SongDAO {
         }
     }
 
-    public Song addSong(String title, String artist, String genre, int playtime, String location) {
-        String sql = "INSERT INTO Song(title,artist,genre,playtime,url) VALUES (?,?,?,?,?)";
+    private int countTotalTime(List<Song> allSongs) {
+        int totalTime = 0;
+        for (Song allSong : allSongs) {
+            totalTime += allSong.getPlaytime();
+        }
+        return totalTime;
+    }
+    public Playlist createPlaylist(String name) {
+        String sql = "INSERT INTO Playlist(name) VALUES (?)";
         try (Connection connection = databaseConnector.getConnection()) {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, title);
-            ps.setString(2, artist);
-            ps.setString(3, genre);
-            ps.setInt(4, playtime);
-            ps.setString(5, location);
+            ps.setString(1, name);
             ps.addBatch();
             ps.executeBatch();
         } catch (SQLServerException ex) {
@@ -52,14 +64,13 @@ public class SongDAO {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        Song song = new Song(title, artist, genre, location, playtime, getNewestSongID());
-        return song;
+        Playlist playlist = new Playlist(0, 0, name, getNewestPlaylist()); //Creates a playlist object and specifies that there are no songs present.
+        return playlist;
     }
-
-    private int getNewestSongID() {
+    private int getNewestPlaylist() {
         int newestID = -1;
         try (Connection connection = databaseConnector.getConnection()) {
-            String query = "SELECT TOP(1) * FROM Song ORDER by id desc";
+            String query = "SELECT TOP(1) * FROM Playlist ORDER by id desc";
             PreparedStatement preparedStmt = connection.prepareStatement(query);
             ResultSet rs = preparedStmt.executeQuery();
             while (rs.next()) {
@@ -74,48 +85,29 @@ public class SongDAO {
             return newestID;
         }
     }
-
-    public Song updateSong(Song song, String title, String artist, String genre, int playtime, String location) {
+    public void updatePlaylist(Playlist selectedItem, String name) {
         try (Connection connection = databaseConnector.getConnection()) {
-            String query = "UPDATE Song set name = ?,artist = ?,genre = ?,time = ?,url = ? WHERE id = ?";
+            String query = "UPDATE Playlist set name = ? WHERE id = ?";
             PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1, title);
-            preparedStmt.setString(2, artist);
-            preparedStmt.setString(3, genre);
-            preparedStmt.setInt(4, playtime);
-            preparedStmt.setString(5, location);
-            preparedStmt.setInt(6, song.getID());
+            preparedStmt.setString(1, name);
+            preparedStmt.setInt(2, selectedItem.getID());
             preparedStmt.executeUpdate();
-            Song son = new Song(title, artist, genre, location, playtime, song.getID());
-            return son;
         } catch (SQLServerException ex) {
             System.out.println(ex);
-            return null;
         } catch (SQLException ex) {
             System.out.println(ex);
-            return null;
         }
     }
-
-    public Song deleteSong(Song songDelete) {
+    public void deletePlaylist(Playlist play) {
         try (Connection connection = databaseConnector.getConnection()) {
-            String query = "DELETE from Song WHERE id = ?";
+            String query = "DELETE from Playlist WHERE id = ?";
             PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setInt(1, songDelete.getID());
+            preparedStmt.setInt(1, play.getID());
             preparedStmt.execute();
         } catch (SQLServerException ex) {
             System.out.println(ex);
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        return songDelete;
-    }
-
-    public static void main(String[] args) throws SQLException, IOException {
-        SongDAO songDAO = new SongDAO();
-
-        List<Song> allSongs = songDAO.getSongs();
-
-        System.out.println(allSongs);
     }
 }

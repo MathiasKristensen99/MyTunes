@@ -1,4 +1,4 @@
-package com.company.be;
+package sample.be;
 
 import java.util.List;
 

@@ -1,11 +1,10 @@
-package com.company.dal;
+package sample.dal;
 
-import com.company.be.Playlist;
-import com.company.be.Song;
+import sample.be.Playlist;
+import sample.be.Song;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

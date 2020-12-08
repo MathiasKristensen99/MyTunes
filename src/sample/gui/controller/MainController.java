@@ -1,4 +1,4 @@
-package com.company.gui.controller;
+package sample.gui.controller;
 
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;

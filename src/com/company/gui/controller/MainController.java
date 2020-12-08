@@ -1,8 +1,12 @@
 package com.company.gui.controller;
 
+import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 
-public class MainController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainController implements Initializable {
     // PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER
 
     //Play ore Pause the song
@@ -86,6 +90,11 @@ public class MainController {
 
     //Delete the choosen playlist
     public void deletePlaylistClicked(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 }

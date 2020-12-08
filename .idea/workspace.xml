@@ -20,7 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f4b3127-581b-47d1-a470-80a2fd652257" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/dal/PlaylistSongDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTunes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyTunes.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/be/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/be/Playlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/be/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/be/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/dal/DatabaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/dal/DatabaseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/dal/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/dal/PlaylistDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/dal/PlaylistSongsDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/gui/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/gui/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/gui/Controllers/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/gui/controller/PlaylistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/gui/Controllers/SongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/gui/controller/SongController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/gui/view/MyTunes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/gui/view/MyTunes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/gui/view/Playlist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/gui/view/Playlist.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/gui/view/Song.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/gui/view/Song.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +60,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlserver.ms" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
@@ -59,14 +76,18 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.2954023" />
+    <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.company.dal" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mathias Surface Pro\Documents\GitHub\MyTunes\src\com\company\gui\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DatabaseDAO">
+  <component name="RunManager" selected="Application.SongDAO">
     <configuration name="DatabaseDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.dal.DatabaseDAO" />
       <module name="MyTunes" />
@@ -90,8 +111,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SongDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.dal.SongDAO" />
+      <module name="MyTunes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.dal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SongDAO" />
         <item itemvalue="Application.DatabaseDAO" />
         <item itemvalue="Application.Main" />
       </list>
@@ -117,6 +163,7 @@
       <workItem from="1607021962621" duration="655000" />
       <workItem from="1607073476836" duration="5976000" />
       <workItem from="1607105994178" duration="71000" />
+      <workItem from="1607418238784" duration="6323000" />
     </task>
     <servers />
   </component>
@@ -140,61 +187,79 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1607369352222" />
-    <state x="218" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606990677972">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state x="720" y="556" key="#SQL_Resolution_Scopes" timestamp="1607420175031">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="720" y="556" key="#SQL_Resolution_Scopes/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607420175031" />
+    <state x="388" y="219" width="957" height="759" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607422137238">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="237" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1563.1002@0.0.1563.1002" timestamp="1606988151544" />
+    <state x="388" y="219" width="957" height="759" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607422137238" />
     <state x="218" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1606990677972" />
     <state x="321" y="303" key="#com.intellij.ide.util.MemberChooser" timestamp="1607090685421">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="196" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1563.1002@0.0.1563.1002" timestamp="1606987912816" />
     <state x="321" y="303" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607090685421" />
-    <state x="794" y="306" key="FileChooserDialogImpl" timestamp="1607075987885">
+    <state x="794" y="306" key="FileChooserDialogImpl" timestamp="1607420163812">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="562" y="243" key="FileChooserDialogImpl/0.0.1563.1002@0.0.1563.1002" timestamp="1606906124040" />
-    <state x="794" y="306" key="FileChooserDialogImpl/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607075987885" />
-    <state width="2517" height="185" key="GridCell.Tab.0.bottom" timestamp="1607091162959">
+    <state x="794" y="306" key="FileChooserDialogImpl/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607420163812" />
+    <state width="2517" height="185" key="GridCell.Tab.0.bottom" timestamp="1607420964364">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1520" height="215" key="GridCell.Tab.0.bottom/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
-    <state width="2517" height="185" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607091162959" />
-    <state width="2517" height="185" key="GridCell.Tab.0.center" timestamp="1607091162959">
+    <state width="2517" height="185" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607420964364" />
+    <state width="2517" height="185" key="GridCell.Tab.0.center" timestamp="1607420964364">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1520" height="215" key="GridCell.Tab.0.center/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
-    <state width="2517" height="185" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607091162959" />
-    <state width="2517" height="185" key="GridCell.Tab.0.left" timestamp="1607091162959">
+    <state width="2517" height="185" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607420964364" />
+    <state width="2517" height="185" key="GridCell.Tab.0.left" timestamp="1607420964364">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1520" height="215" key="GridCell.Tab.0.left/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
-    <state width="2517" height="185" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607091162959" />
-    <state width="2517" height="185" key="GridCell.Tab.0.right" timestamp="1607091162959">
+    <state width="2517" height="185" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607420964364" />
+    <state width="2517" height="185" key="GridCell.Tab.0.right" timestamp="1607420964364">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1520" height="215" key="GridCell.Tab.0.right/0.0.1563.1002@0.0.1563.1002" timestamp="1606988153531" />
-    <state width="2517" height="185" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607091162959" />
-    <state x="477" y="82" key="SettingsEditor" timestamp="1607076941607">
+    <state width="2517" height="185" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607420964364" />
+    <state x="808" y="243" key="SettingsEditor" timestamp="1607422897085">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="291" y="59" key="SettingsEditor/0.0.1563.1002@0.0.1563.1002" timestamp="1606989233259" />
-    <state x="477" y="82" key="SettingsEditor/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607076941607" />
+    <state x="808" y="243" key="SettingsEditor/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607422897085" />
     <state x="241" y="23" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1606990814309" />
-    <state x="498" y="323" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607369334486">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="223" height="441" key="SqlResolveConfigurable" timestamp="1607420167224">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="223" height="441" key="SqlResolveConfigurable/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607420167224" />
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607422551974">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607422551974" />
+    <state x="830" y="549" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607421572210">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="498" y="323" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1607369334486" />
     <state x="507" y="393" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1563.1002@0.0.1563.1002" timestamp="1606906285088" />
-    <state x="830" y="549" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607076929805" />
+    <state x="830" y="549" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607421572210" />
     <state x="467" y="342" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.813@0.23.1440.813" timestamp="1606990771576" />
     <state x="1273" y="0" width="1294" height="1407" key="dock-window-1" timestamp="1607106064905">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1273" y="0" width="1294" height="1407" key="dock-window-1/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607106064905" />
-    <state x="186" y="249" key="refactoring.ChangeSignatureDialog" timestamp="1606906635244">
-      <screen x="0" y="0" width="1563" height="1002" />
+    <state x="871" y="320" key="new project wizard" timestamp="1607419880184">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="871" y="320" key="new project wizard/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607419880184" />
+    <state x="305" y="348" key="refactoring.ChangeSignatureDialog" timestamp="1607423183035">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="186" y="249" key="refactoring.ChangeSignatureDialog/0.0.1563.1002@0.0.1563.1002" timestamp="1606906635244" />
+    <state x="305" y="348" key="refactoring.ChangeSignatureDialog/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607423183035" />
   </component>
 </project>

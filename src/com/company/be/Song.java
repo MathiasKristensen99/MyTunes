@@ -1,7 +1,5 @@
 package com.company.be;
 
-import java.io.File;
-
 public class Song {
 
     private String title;
@@ -61,6 +59,27 @@ public class Song {
         return ID;
     }
 
+    public String toString() {
+        return title;
+    }
+
+    public String getPlaytimeString() {
+        String minutesString;
+        String secondString;
+        int minutes = playtime / 60;
+        if (minutes < 10) {
+            minutesString = "0" + minutes;
+        } else {
+            minutesString = "" + minutes;
+        }
+        int seconds = playtime % 60;
+        if (10 > seconds) {
+            secondString = "0" + seconds;
+        } else {
+            secondString = "" + seconds;
+        }
+        return minutesString + ":" + secondString;
+    }
 
     //TODO Tostring metoder
 }

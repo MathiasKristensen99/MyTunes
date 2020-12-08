@@ -1,7 +1,6 @@
 package com.company.dal;
 
 import com.company.be.Song;
-import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 import java.io.IOException;
@@ -24,7 +23,7 @@ public class SongDAO {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sqlStatement);
             while (rs.next()) {
-                Song song = new Song(rs.getString("name"), rs.getString("artist"), rs.getString("genre"), rs.getString("location"), rs.getInt("time"), rs.getInt("id"));
+                Song song = new Song(rs.getString("title"), rs.getString("artist"), rs.getString("genre"), rs.getString("location"), rs.getInt("playtime"), rs.getInt("id"));
                 allSongs.add(song);
             }
             return allSongs;
@@ -38,7 +37,7 @@ public class SongDAO {
     }
 
     public Song addSong(String title, String artist, String genre, int playtime, String location) {
-        String sql = "INSERT INTO Song(name,artist,genre,time,url) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO Song(title,artist,genre,playtime,url) VALUES (?,?,?,?,?)";
         try (Connection connection = databaseConnector.getConnection()) {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, title);
@@ -110,5 +109,13 @@ public class SongDAO {
             System.out.println(ex);
         }
         return songDelete;
+    }
+
+    public static void main(String[] args) throws SQLException, IOException {
+        SongDAO songDAO = new SongDAO();
+
+        List<Song> allSongs = songDAO.getSongs();
+
+        System.out.println(allSongs);
     }
 }

@@ -2,7 +2,6 @@ package com.company.dal;
 
 import com.company.be.Playlist;
 import com.company.be.Song;
-import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 import java.io.IOException;
@@ -12,6 +11,7 @@ import java.util.List;
 
 public class PlaylistDAO {
 
+    PlaylistSongDAO PlaylistSongInfo = new PlaylistSongDAO();
     private DatabaseDAO databaseConnector;
 
 

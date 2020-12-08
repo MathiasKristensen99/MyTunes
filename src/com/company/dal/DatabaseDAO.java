@@ -1,9 +1,11 @@
 package com.company.dal;
 
+import com.company.be.Song;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 
 public class DatabaseDAO {
@@ -29,7 +31,6 @@ public class DatabaseDAO {
         Connection connection = databaseConnector.getConnection();
 
         System.out.println("Is it open? " + !connection.isClosed());
-
         connection.close();
     }
 }

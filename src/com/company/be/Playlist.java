@@ -3,21 +3,22 @@ package com.company.be;
 import java.util.List;
 
 public class Playlist {
+    private int totalTime;
     private List<Song> playlist;
     private String playlistName;
     private int ID;
     private int songCount;
-    private int totalPlaytime;
-    private final String totalPlaytimeString;
+    private final String totalTimeString;
 
-    public Playlist(List<Song> playlist, String playlistName, int id, int songCount, int totalPlaytime, String totalPlaytimeString) {
-        this.playlist = playlist;
-        this.playlistName = playlistName;
-        ID = id;
+    public Playlist(int songCount, int totalTime, String name, int ID) {
         this.songCount = songCount;
-        this.totalPlaytime = totalPlaytime;
-        this.totalPlaytimeString = totalPlaytimeString;
+        this.totalTime = totalTime;
+        totalTimeString = getTotalTimeString();
+        this.playlistName = playlistName;
+        this.ID = ID;
     }
+
+
 
     public List<Song> getPlaylist() {
         return playlist;
@@ -33,6 +34,10 @@ public class Playlist {
 
     public void setPlaylistName(String playlistName) {
         this.playlistName = playlistName;
+    }
+
+    public void setSongList(List<Song> songList) {
+        this.playlist = songList;
     }
 
     public int getID() {
@@ -51,20 +56,38 @@ public class Playlist {
         this.songCount = songCount;
     }
 
-    public int getTotalPlaytime() {
-        return totalPlaytime;
+    public int getTotalTime() {
+        return totalTime;
     }
 
-    public void setTotalPlaytime(int totalPlaytime) {
-        this.totalPlaytime = totalPlaytime;
-    }
-
-    public String getTotalPlaytimeString() {
-        return totalPlaytimeString;
+    public void setTotalTime(int totalTime) {
+        this.totalTime = totalTime;
     }
 
     public Song getSong(int currentSongIndex) {
         return playlist.get(currentSongIndex);
     }
-    //TODO Tostring metoder
+
+    public String toString() {
+        return " Name=" + playlistName + "Total song count =" + songCount + ", Total play Time=" + totalTime;
+    }
+
+    public String getTotalTimeString() {
+        String minutesString;
+        String secondString;
+        int hours = totalTime / 3600;
+        int minutes = (totalTime % 3600) / 60;
+        if (minutes < 10) {
+            minutesString = "0" + minutes;
+        } else {
+            minutesString = "" + minutes;
+        }
+        int seconds = totalTime % 60;
+        if (10 > seconds) {
+            secondString = "0" + seconds;
+        } else {
+            secondString = "" + seconds;
+        }
+        return hours + ":" + minutesString + ":" + secondString;
+    }
 }

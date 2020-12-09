@@ -6,11 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.net.URL;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/MyTunes/src/sample/gui/MyTunes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/gui/view/MyTunes.fxml"));
         primaryStage.setTitle("My Tunes");
         primaryStage.centerOnScreen();
         Scene scene = new Scene(root);

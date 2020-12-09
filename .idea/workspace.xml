@@ -21,23 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8f4b3127-581b-47d1-a470-80a2fd652257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/be/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/be/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/be/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/be/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/bll/PlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/bll/PlaylistManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/bll/SongManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/bll/SongManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/dal/DatabaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dal/DatabaseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/dal/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dal/PlaylistDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/dal/PlaylistSongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dal/PlaylistSongDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/dal/SongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dal/SongDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gui/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gui/controller/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/controller/PlaylistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gui/controller/SongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/controller/SongController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gui/model/PlaylistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/model/PlaylistModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gui/model/SongModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/model/SongModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gui/view/MyTunes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/view/MyTunes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gui/view/Playlist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/view/Playlist.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gui/view/Song.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/view/Song.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Pictures/Arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pictures/Arrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Pictures/Arroww.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pictures/Arroww.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Pictures/Arrowww.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pictures/Arrowww.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Pictures/MenuSlide.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pictures/MenuSlide.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Pictures/farstForward.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pictures/fastForward.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Pictures/farstForwardd.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pictures/fastForwardd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Pictures/officialPlayButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pictures/officialPlayButton.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Pictures/pauseButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pictures/pauseButton.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Pictures/sherlock.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pictures/sherlock.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/songs/I_spoke_to_the_devil_in_miami_he_said_everything_would_be_fine.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/songs/I_spoke_to_the_devil_in_miami_he_said_everything_would_be_fine.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTunes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyTunes.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/gui/view/MyTunes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/view/MyTunes.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,12 +67,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Dokumenter/Datamatiker/SCO1/Java SDK/javafx-sdk-11.0.2/lib" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2954023" />
     <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
@@ -118,6 +114,20 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="MyTunes" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\mathi\OneDrive\Dokumenter\Datamatiker\SCO1\Java SDK\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="MyTunes" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\mathi\OneDrive\Dokumenter\Datamatiker\SCO1\Java SDK\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml " />
       <extension name="coverage">
         <pattern>
@@ -142,13 +152,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,6 +172,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.SongDAO" />
@@ -188,6 +201,7 @@
       <workItem from="1607073476836" duration="5976000" />
       <workItem from="1607105994178" duration="71000" />
       <workItem from="1607418238784" duration="6323000" />
+      <workItem from="1607506724903" duration="1975000" />
     </task>
     <servers />
   </component>
@@ -207,33 +221,45 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="355" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607429023258">
+    <state x="734" y="355" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607508701227">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="355" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607429023258" />
+    <state x="734" y="355" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607508701227" />
+    <state x="1060" y="441" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1607508649262">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="441" key="#com.intellij.ide.macro.MacrosDialog/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607508649262" />
     <state x="1076" y="607" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1607428650983">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1076" y="607" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607428650983" />
-    <state width="2517" height="325" key="GridCell.Tab.0.bottom" timestamp="1607438328504">
+    <state x="986" y="441" key="FileChooserDialogImpl" timestamp="1607507060393">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="325" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607438328504" />
-    <state width="2517" height="325" key="GridCell.Tab.0.center" timestamp="1607438328504">
+    <state x="986" y="441" key="FileChooserDialogImpl/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607507060393" />
+    <state width="2517" height="381" key="GridCell.Tab.0.bottom" timestamp="1607508669989">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="325" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607438328504" />
-    <state width="2517" height="325" key="GridCell.Tab.0.left" timestamp="1607438328504">
+    <state width="2517" height="381" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607508669989" />
+    <state width="2517" height="381" key="GridCell.Tab.0.center" timestamp="1607508669988">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="325" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607438328504" />
-    <state width="2517" height="325" key="GridCell.Tab.0.right" timestamp="1607438328504">
+    <state width="2517" height="381" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607508669988" />
+    <state width="2517" height="381" key="GridCell.Tab.0.left" timestamp="1607508669988">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="325" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607438328504" />
-    <state x="760" y="274" key="SettingsEditor" timestamp="1607428754081">
+    <state width="2517" height="381" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607508669988" />
+    <state width="2517" height="381" key="GridCell.Tab.0.right" timestamp="1607508669988">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="760" y="274" key="SettingsEditor/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607428754081" />
+    <state width="2517" height="381" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607508669988" />
+    <state x="760" y="274" key="SettingsEditor" timestamp="1607508299961">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="760" y="274" key="SettingsEditor/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607508299961" />
+    <state x="984" y="591" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607507154110">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="984" y="591" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607507154110" />
   </component>
 </project>

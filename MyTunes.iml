@@ -9,7 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="com.microsoft.sqlserver:mssql-jdbc:6.4.0.jre9" level="project" />
     <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="org.openjfx:javafx-fxml:15-ea+8" level="project" />
     <orderEntry type="library" name="javax.xml.bind:jaxb-api:2.4.0-b180830.0359" level="project" />
+    <orderEntry type="library" exported="" name="org.openjfx:javafx-fxml:15-ea+8" level="project" />
   </component>
 </module>

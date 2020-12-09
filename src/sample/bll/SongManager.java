@@ -1,16 +1,20 @@
 package sample.bll;
 
 import sample.be.Song;
+import sample.dal.PlaylistSongDAO;
 import sample.dal.SongDAO;
+
+import java.io.IOException;
 import java.util.List;
 
 
 public class SongManager {
+    private  SongDAO songDAO;
+    private  PlaylistSongDAO playlistSongDAO;
 
-    private final SongDAO songDAO;
-
-    public SongManager(SongDAO songDAO) {
-        this.songDAO = songDAO;
+    public SongManager() throws IOException {
+        songDAO = new SongDAO();
+        playlistSongDAO = new PlaylistSongDAO();
     }
 
     public Song addSong(String title, String artist, String genre, int playtime, String location) {
@@ -23,8 +27,6 @@ public class SongManager {
 
     public Song deleteSong(Song songDelete) {
         return songDAO.deleteSong(songDelete);
-
-
     }
     public List<Song> getSongs() {
         return songDAO.getSongs();

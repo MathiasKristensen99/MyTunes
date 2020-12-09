@@ -17,16 +17,25 @@ public class SongDAO {
     }
 
     public List<Song> getSongs() {
-        List<Song> allSongs = new ArrayList<>();
+        ArrayList<Song> allSongs = new ArrayList<>();
+
         try (Connection connection = databaseConnector.getConnection()) {
             String sqlStatement = "SELECT * FROM Song";
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(sqlStatement);
-            while (rs.next()) {
-                Song song = new Song(rs.getString("title"), rs.getString("artist"), rs.getString("genre"), rs.getString("location"), rs.getInt("playtime"), rs.getInt("id"));
-                allSongs.add(song);
+            if (statement.execute(sqlStatement)) {
+                ResultSet rs = statement.getResultSet();
+                while (rs.next()) {
+                    String title = rs.getString("title");
+                    String artist = rs.getString("artist");
+                    String genre = rs.getString("genre");
+                    String location = rs.getString("location");
+                    int playtime = rs.getInt("playtime");
+                    int ID = rs.getInt("ID");
+
+                    Song song = new Song(title,artist,genre,location, playtime, ID);
+                    allSongs.add(song);
+                }
             }
-            return allSongs;
         } catch (SQLServerException ex) {
             System.out.println(ex);
             return null;
@@ -34,6 +43,7 @@ public class SongDAO {
             System.out.println(ex);
             return null;
         }
+        return allSongs;
     }
 
     public Song addSong(String title, String artist, String genre, int playtime, String location) {

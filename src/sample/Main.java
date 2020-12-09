@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/gui/view/MyTunes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/gui/view/MyTunes.fxml")); // Main is MyTunes.fxml
         primaryStage.setTitle("My Tunes");
         primaryStage.centerOnScreen();
         Scene scene = new Scene(root);

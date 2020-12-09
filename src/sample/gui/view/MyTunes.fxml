@@ -14,9 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane onMouseClicked="#songEditClicked" prefHeight="390.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gui.controller.MainController">
+<AnchorPane fx:id="songNameDisplay" onMouseClicked="#songEditClicked" prefHeight="390.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gui.controller.MainController">
    <children>
-      <Button layoutX="526.0" layoutY="340.0" mnemonicParsing="false" onMouseClicked="#closeClicked" scaleX="1.1" text="Close">
+      <Button fx:id="closeButton" layoutX="526.0" layoutY="340.0" mnemonicParsing="false" onAction="#closeButtonAction" scaleX="1.1" text="Close">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -117,11 +117,11 @@
             <Image url="@../../../../../MyTunes/data/pictures/pauseButton.png" />
          </image>
       </ImageView>
-      <TextFlow layoutX="201.0" layoutY="29.0" prefHeight="26.0" prefWidth="163.0" />
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="73.0" layoutY="11.0" onMouseClicked="#playPressed">
          <image>
             <Image url="@../../../../../MyTunes/data/pictures/officialPlayButton.png" />
          </image>
       </ImageView>
+      <TextFlow fx:id="songNameDisplay" layoutX="180.0" layoutY="27.0" prefHeight="26.0" prefWidth="191.0" />
    </children>
 </AnchorPane>

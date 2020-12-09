@@ -1,16 +1,40 @@
 package sample.gui.controller;
 
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
+import jdk.jfr.Category;
+import sample.gui.model.SongModel;
 
+import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
+
+
 public class MainController implements Initializable {
+
+    @FXML private javafx.scene.control.Button closeButton;
+
+
+    File songFile = new File("data\\songs\\Kom_Kom_-_Rune_Rk__Og_Stanley_Most.mp3");
+
+
+
     // PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+    @FXML
+    private void songNameDisplay(){
 
     }
 
@@ -39,7 +63,11 @@ public class MainController implements Initializable {
     //SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER
 
     //Close the application
-    public void closeClicked(MouseEvent mouseEvent) {
+    @FXML
+    private void closeButtonAction() {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
+
 
     }
 

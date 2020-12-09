@@ -9,6 +9,11 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
     // PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
     //Play ore Pause the song
     public void playPressed(MouseEvent mouseEvent) {
 
@@ -25,7 +30,7 @@ public class MainController implements Initializable {
 
     //SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX
 
-    //filter the songs with the tekst in the search box
+    //filter the songs with the text in the search box
     public void magnifyingGlassClicked(MouseEvent mouseEvent) {
 
     }
@@ -93,8 +98,5 @@ public class MainController implements Initializable {
 
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-    }
 }

@@ -1,12 +1,18 @@
 package sample.gui.controller;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import jdk.jfr.Category;
+import sample.be.Playlist;
+import sample.be.Song;
+import sample.gui.model.PlaylistModel;
 import sample.gui.model.SongModel;
 
 import java.awt.event.ActionEvent;
@@ -20,7 +26,23 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-    @FXML private javafx.scene.control.Button closeButton;
+
+    private ObservableList<Playlist> observableListPlay;
+    private ObservableList<Song> observableListSong;
+
+    private SongModel songModel;
+    private PlaylistModel playlistModel;
+
+    @FXML
+    private javafx.scene.control.Button closeButton;
+    @FXML
+    private TableColumn<Song, String> songTitle;
+    @FXML
+    private TableColumn<Song, String> songArtist;
+    @FXML
+    private TableColumn<Song, String> songCategory;
+    @FXML
+    private TableColumn<Song, Integer> songTime;
 
 
     File songFile = new File("data\\songs\\Kom_Kom_-_Rune_Rk__Og_Stanley_Most.mp3");
@@ -32,6 +54,11 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        observableListSong = songModel.getAllSongs();
+        songTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        songArtist.setCellValueFactory(new PropertyValueFactory<>("artist"));
+        songCategory.setCellValueFactory(new PropertyValueFactory<>("genre"));
+        songTime.setCellValueFactory(new PropertyValueFactory<>("playTime"));
     }
     @FXML
     private void songNameDisplay(){

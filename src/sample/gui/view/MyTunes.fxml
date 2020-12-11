@@ -86,10 +86,10 @@
             <Image url="@../../../../../MyTunes/data/pictures/sherlock.png" />
          </image>
       </ImageView>
-      <TableView layoutX="351.0" layoutY="89.0" prefHeight="239.0" prefWidth="223.0">
+      <TableView fx:id="tableAllsongs" layoutX="351.0" layoutY="89.0" prefHeight="239.0" prefWidth="223.0">
         <columns>
-          <TableColumn fx:id="songTitle" prefWidth="56.00006103515625" text="Title" />
-          <TableColumn fx:id="songArtist" prefWidth="52.800048828125" text="Artist" />
+          <TableColumn fx:id="songTitle" prefWidth="53.0" text="Title" />
+          <TableColumn fx:id="songArtist" prefWidth="57.0" text="Artist" />
             <TableColumn fx:id="songCategory" prefWidth="55.20001220703125" text="Category" />
             <TableColumn fx:id="songTime" prefWidth="63.199951171875" text="Time" />
         </columns>

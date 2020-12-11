@@ -1,9 +1,11 @@
 package sample.gui.controller;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -15,6 +17,9 @@ import sample.be.Song;
 import sample.gui.model.PlaylistModel;
 import sample.gui.model.SongModel;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
@@ -24,17 +29,20 @@ import java.util.ResourceBundle;
 
 
 
-public class MainController implements Initializable {
+public class MainController implements Initializable  {
 
 
     private ObservableList<Playlist> observableListPlay;
-    private ObservableList<Song> observableListSong;
+    private ObservableList<Song> allSongs = FXCollections.observableArrayList();
 
-    private SongModel songModel;
-    private PlaylistModel playlistModel;
+    private final SongModel songModel = new SongModel();
+    private final PlaylistModel playlistModel = new PlaylistModel();
 
     @FXML
     private javafx.scene.control.Button closeButton;
+    @FXML
+    private TableView<Song> tableAllsongs;
+
     @FXML
     private TableColumn<Song, String> songTitle;
     @FXML
@@ -45,8 +53,10 @@ public class MainController implements Initializable {
     private TableColumn<Song, Integer> songTime;
 
 
-    File songFile = new File("data\\songs\\Kom_Kom_-_Rune_Rk__Og_Stanley_Most.mp3");
+    File songFile = new File("data/songs/Kom_Kom_-_Rune_Rk__Og_Stanley_Most.mp3");
 
+    public MainController() throws IOException {
+    }
 
 
     // PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER
@@ -54,11 +64,20 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        observableListSong = songModel.getAllSongs();
+
+        //MediaPlayer mediaPlayer = new MediaPlayer(new Media(new File("src/Resources/Kom_Kom_-_Rune_Rk__Og_Stanley_Most.mp3").toURI().toString()));
+        //mediaPlayer.setOnReady(() -> {
+            //allSongs.addAll(songModel.getAllSongs());
+        //});
+
+        allSongs = songModel.getAllSongs();
         songTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         songArtist.setCellValueFactory(new PropertyValueFactory<>("artist"));
         songCategory.setCellValueFactory(new PropertyValueFactory<>("genre"));
         songTime.setCellValueFactory(new PropertyValueFactory<>("playTime"));
+
+        tableAllsongs.setItems(allSongs);
+
     }
     @FXML
     private void songNameDisplay(){

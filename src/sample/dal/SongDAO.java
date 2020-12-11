@@ -36,9 +36,6 @@ public class SongDAO {
                     allSongs.add(song);
                 }
             }
-        } catch (SQLServerException ex) {
-            System.out.println(ex);
-            return null;
         } catch (SQLException ex) {
             System.out.println(ex);
             return null;
@@ -47,7 +44,7 @@ public class SongDAO {
     }
 
     public Song addSong(String title, String artist, String genre, int playtime, String location) {
-        String sql = "INSERT INTO Song(title,artist,genre,playtime,url) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO Song(title,artist,genre,playtime,location) VALUES (?,?,?,?,?)";
         try (Connection connection = databaseConnector.getConnection()) {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, title);

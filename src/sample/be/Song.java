@@ -81,5 +81,4 @@ public class Song {
         return minutesString + ":" + secondString;
     }
 
-    //TODO Tostring metoder
 }

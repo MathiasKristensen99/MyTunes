@@ -4,8 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sample.be.Song;
 import sample.bll.SongManager;
+import sample.dal.SongDAO;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
 public class SongModel {
 
@@ -35,7 +38,4 @@ public class SongModel {
         songManager.updateSong(songDelete, title, artist, genre, playtime, location);
     }
 
-    //public ObservableList<Song> search (ObservableList<Song> items, String query) {
-        //return songManager;
-    //}
 }

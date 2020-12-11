@@ -29,6 +29,7 @@ public class SongManager {
         return songDAO.deleteSong(songDelete);
     }
     public List<Song> getSongs() {
-        return songDAO.getSongs();
+        List<Song> allSongs = songDAO.getSongs();
+        return allSongs;
     }
 }

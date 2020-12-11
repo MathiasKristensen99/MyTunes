@@ -32,10 +32,13 @@ public class SongController implements Initializable {
 
     //Cancel action
     public void cancelClicked(MouseEvent mouseEvent) {
+        
     }
 
     //safe action
     public void safeClicked(MouseEvent mouseEvent) {
     }
 
+    public void chooseFileMethod(javafx.event.ActionEvent actionEvent) {
+    }
 }

@@ -2,8 +2,12 @@ package sample.gui.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -20,7 +24,6 @@ import sample.gui.model.SongModel;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -53,6 +56,7 @@ public class MainController implements Initializable  {
     private TableColumn<Song, Integer> songTime;
 
 
+
     File songFile = new File("data/songs/Kom_Kom_-_Rune_Rk__Og_Stanley_Most.mp3");
 
     public MainController() throws IOException {
@@ -81,6 +85,7 @@ public class MainController implements Initializable  {
     }
     @FXML
     private void songNameDisplay(){
+
 
     }
 
@@ -117,9 +122,10 @@ public class MainController implements Initializable  {
 
     }
 
+
+
     //Add new song to the register (
-    public void songNewClicked(MouseEvent mouseEvent) {
-    }
+
 
 
     //Delete choosen song
@@ -172,5 +178,28 @@ public class MainController implements Initializable  {
 
     }
 
-
+    //open Song edit scene
+    public void newButtonAction(ActionEvent actionEvent) throws IOException {
+         Parent root1;
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/gui/view/Song.fxml"));
+    root1 = (Parent) fxmlLoader.load();
+    Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.setTitle("Song");
+        stage.centerOnScreen();
+        stage.show();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

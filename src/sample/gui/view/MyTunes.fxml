@@ -32,7 +32,7 @@
          <font>
             <Font size="10.0" />
          </font></Button>
-      <Button layoutX="351.0" layoutY="340.0" mnemonicParsing="false" onMouseClicked="#songNewClicked" scaleX="1.1" text="New..">
+      <Button fx:id="newButton" layoutX="351.0" layoutY="340.0" mnemonicParsing="false" onAction="#newButtonAction" scaleX="1.1" text="New..">
          <font>
             <Font size="10.0" />
          </font></Button>

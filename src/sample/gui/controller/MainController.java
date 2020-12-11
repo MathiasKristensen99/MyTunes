@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -35,7 +36,9 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable  {
 
 
-    private ObservableList<Playlist> observableListPlay;
+
+
+    private ObservableList<Playlist> allPlaylists = FXCollections.observableArrayList();
     private ObservableList<Song> allSongs = FXCollections.observableArrayList();
 
     private final SongModel songModel = new SongModel();
@@ -45,7 +48,10 @@ public class MainController implements Initializable  {
     private javafx.scene.control.Button closeButton;
     @FXML
     private TableView<Song> tableAllsongs;
-
+    @FXML
+    private TableView<Playlist> tableAllPlaylists;
+    /*@FXML
+    private ListView listViewSongs;*/
     @FXML
     private TableColumn<Song, String> songTitle;
     @FXML
@@ -54,7 +60,12 @@ public class MainController implements Initializable  {
     private TableColumn<Song, String> songCategory;
     @FXML
     private TableColumn<Song, Integer> songTime;
-
+    @FXML
+    private TableColumn<Song, String> playlistName;
+    @FXML
+    private TableColumn<Song, Integer> playlistSongs;
+    @FXML
+    private TableColumn<Song, Integer> playlistTime;
 
 
     File songFile = new File("data/songs/Kom_Kom_-_Rune_Rk__Og_Stanley_Most.mp3");
@@ -79,10 +90,23 @@ public class MainController implements Initializable  {
         songArtist.setCellValueFactory(new PropertyValueFactory<>("artist"));
         songCategory.setCellValueFactory(new PropertyValueFactory<>("genre"));
         songTime.setCellValueFactory(new PropertyValueFactory<>("playTime"));
-
         tableAllsongs.setItems(allSongs);
 
+        allPlaylists = playlistModel.getAllPlaylists();
+        playlistName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        playlistTime.setCellValueFactory(new PropertyValueFactory<>("totalTime"));
+        playlistSongs.setCellValueFactory(new PropertyValueFactory<>("allSongs"));
+        tableAllPlaylists.setItems(allPlaylists);
+
+
+
     }
+
+    public void refreshPlaylist(){
+        tableAllPlaylists.getItems().clear();
+        tableAllPlaylists.setItems(playlistModel.getAllPlaylists());
+    }
+
     @FXML
     private void songNameDisplay(){
 

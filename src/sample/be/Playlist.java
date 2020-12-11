@@ -14,7 +14,7 @@ public class Playlist {
         this.songCount = songCount;
         this.totalTime = totalTime;
         totalTimeString = getTotalTimeString();
-        this.playlistName = playlistName;
+        this.playlistName = name;
         this.ID = ID;
     }
 

@@ -52,14 +52,14 @@
          <font>
             <Font size="10.0" />
          </font></Button>
-      <TableView layoutX="11.0" layoutY="89.0" prefHeight="239.0" prefWidth="163.0">
+      <TableView fx:id="tableAllPlaylists" layoutX="11.0" layoutY="89.0" prefHeight="239.0" prefWidth="163.0">
         <columns>
-          <TableColumn prefWidth="52.79998779296875" text="Name" />
-          <TableColumn prefWidth="55.20001220703125" text="Songs" />
-            <TableColumn prefWidth="53.60002441406249" text="Time" />
+          <TableColumn fx:id="playlistName" prefWidth="52.79998779296875" text="Name" />
+          <TableColumn fx:id="playlistSongs" prefWidth="55.20001220703125" text="Songs" />
+            <TableColumn fx:id="playlistTime" prefWidth="53.60002441406249" text="Time" />
         </columns>
       </TableView>
-      <ListView layoutX="189.0" layoutY="89.0" prefHeight="239.0" prefWidth="126.0" />
+      <ListView fx:id="listViewSongs" layoutX="189.0" layoutY="89.0" prefHeight="239.0" prefWidth="126.0" />
       <Label layoutX="15.0" layoutY="70.0" text="Playlist" />
       <Label layoutX="190.0" layoutY="70.0" text="Songs on Playlist" />
       <Label layoutX="351.0" layoutY="70.0" text="Songs" />

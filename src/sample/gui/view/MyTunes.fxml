@@ -48,7 +48,7 @@
          <font>
             <Font size="10.0" />
          </font></Button>
-      <Button layoutX="10.0" layoutY="340.0" mnemonicParsing="false" onMouseClicked="#newPlaylistClicked" scaleX="1.1" text="New..">
+      <Button fx:id="playlistNewButton" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" onAction="#playlistNewButtonAction" scaleX="1.1" text="New..">
          <font>
             <Font size="10.0" />
          </font></Button>

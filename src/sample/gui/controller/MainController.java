@@ -102,6 +102,17 @@ public class MainController implements Initializable  {
     public void lastSong(MouseEvent mouseEvent) {
 
     }
+    //open Song edit scene
+    public void newButtonAction(ActionEvent actionEvent) throws IOException {
+        Parent root1;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/gui/view/Song.fxml"));
+        root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.setTitle("Song");
+        stage.centerOnScreen();
+        stage.show();
+    }
 
     //SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX
 
@@ -163,10 +174,7 @@ public class MainController implements Initializable  {
 
     //PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU
 
-    //Makes a new playlist
-    public void newPlaylistClicked(MouseEvent mouseEvent) {
 
-    }
 
     //Edit the choosen playlist
     public void editPlaylistClicked(MouseEvent mouseEvent) {
@@ -178,17 +186,18 @@ public class MainController implements Initializable  {
 
     }
 
-    //open Song edit scene
-    public void newButtonAction(ActionEvent actionEvent) throws IOException {
-         Parent root1;
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/gui/view/Song.fxml"));
-    root1 = (Parent) fxmlLoader.load();
-    Stage stage = new Stage();
-        stage.setScene(new Scene(root1));
-        stage.setTitle("Song");
+
+    public void playlistNewButtonAction(ActionEvent actionEvent)throws IOException {
+        Parent root2;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/gui/view/Playlist.fxml"));
+        root2 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root2));
+        stage.setTitle("Playlist");
         stage.centerOnScreen();
         stage.show();
     }
+
 }
 
 

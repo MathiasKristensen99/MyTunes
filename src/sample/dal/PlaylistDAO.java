@@ -27,7 +27,7 @@ public class PlaylistDAO {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sqlStatement);
             while (rs.next()) {
-                String name = rs.getString("name");
+                String name = rs.getString("PlaylistName");
                 int id = rs.getInt("id");
                 List<Song> allSongs = PlaylistSongInfo.getPlaylistSongs(id);
                 Playlist pl = new Playlist(allSongs.size(), countTotalTime(allSongs), name, id);
@@ -36,9 +36,6 @@ public class PlaylistDAO {
 
             }
             return allPlaylists; // Returns the playlists
-        } catch (SQLServerException ex) {
-            System.out.println(ex);
-            return null;
         } catch (SQLException ex) {
             System.out.println(ex);
             return null;
@@ -109,5 +106,13 @@ public class PlaylistDAO {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+    }
+
+    public static void main(String[] args) throws SQLException, IOException {
+        PlaylistDAO playlistDAO = new PlaylistDAO();
+
+        List<Playlist> allPlaylist = playlistDAO.getAllPlaylists();
+
+        System.out.println(allPlaylist);
     }
 }

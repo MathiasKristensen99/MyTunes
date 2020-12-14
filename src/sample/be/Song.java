@@ -1,5 +1,12 @@
 package sample.be;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
 public class Song {
 
     private String title;
@@ -17,7 +24,8 @@ public class Song {
         this.location = location;
         this.playtime = playtime;
         ID = id;
-    }
+  }
+
 
     public String getLocation() {
         return location;

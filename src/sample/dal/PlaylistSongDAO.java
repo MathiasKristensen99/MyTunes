@@ -5,6 +5,7 @@ import sample.be.Song;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,11 +15,15 @@ import java.util.List;
 
 public class PlaylistSongDAO {
 
-    SQLServerDataSource ds;
+    private DatabaseDAO databaseConnector;
+
+    public PlaylistSongDAO() throws IOException {
+        databaseConnector = new DatabaseDAO();
+    }
 
     public List<Song> getPlaylistSongs(int id) {
         List<Song> newSongList = new ArrayList();
-        try (Connection con = ds.getConnection()) {
+        try (Connection con = databaseConnector.getConnection()) {
             String query = "SELECT * FROM PlaylistSong INNER JOIN Song ON PlaylistSong.SongID = Song.id WHERE PlaylistSong.PlaylistID = ? ORDER by locationInListID desc"; // Gets all songs from a coresponding playlist.
             PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt.setInt(1, id);
@@ -41,7 +46,7 @@ public class PlaylistSongDAO {
     Removes a specific song from every playlist in the Playlist Song database table. (So the song can be removed from the song database table)
      */
     public void deleteFromPlaylistSongsEverything(Song songToDelete) {
-        try (Connection con = ds.getConnection()) {
+        try (Connection con = databaseConnector.getConnection()) {
             String query = "DELETE from PlaylistSong WHERE SongID = ?";
             PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt.setInt(1, songToDelete.getID());
@@ -59,7 +64,7 @@ public class PlaylistSongDAO {
     public Song addToPlaylist(Playlist playlist, Song song) {
         String sql = "INSERT INTO PlaylistSong(PlaylistID,SongID) VALUES (?,?,?)";
         int Id = -1;
-        try (Connection con = ds.getConnection()) {
+        try (Connection con = databaseConnector.getConnection()) {
             PreparedStatement ps = con.prepareStatement(sql);;
             ps.setInt(1, playlist.getID());
             ps.setInt(2, song.getID());
@@ -81,7 +86,7 @@ public class PlaylistSongDAO {
     Deletes playlist from the Playlist song table in database. (It allows playlist to be deleted from playlist table)
      */
     public void deleteFromPlaylistSongsEverything(Playlist play) {
-        try (Connection con = ds.getConnection()) {
+        try (Connection con = databaseConnector.getConnection()) {
             String query = "DELETE from PlaylistSong WHERE PlaylistID = ?";
             PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt.setInt(1, play.getID());
@@ -97,7 +102,7 @@ public class PlaylistSongDAO {
     Removes a specific song from playlist.
      */
     public void removeSongFromPlaylist(Playlist selectedItem, Song selectedSong) {
-        try (Connection con = ds.getConnection()) {
+        try (Connection con = databaseConnector.getConnection()) {
             String query = "DELETE from PlaylistSong WHERE PlaylistID = ? AND SongID = ?";
             PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt.setInt(1, selectedItem.getID());

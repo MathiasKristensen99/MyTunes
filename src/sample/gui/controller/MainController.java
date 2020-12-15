@@ -41,7 +41,7 @@ public class MainController implements Initializable  {
     private ObservableList<Playlist> allPlaylists = FXCollections.observableArrayList();
     private ObservableList<Song> allSongs = FXCollections.observableArrayList();
 
-    private final SongModel songModel = new SongModel();
+    private final SongModel songModel;
     private final PlaylistModel playlistModel = new PlaylistModel();
 
     @FXML
@@ -71,6 +71,7 @@ public class MainController implements Initializable  {
     File songFile = new File("data/songs/Kom_Kom_-_Rune_Rk__Og_Stanley_Most.mp3");
 
     public MainController() throws IOException {
+        songModel = new SongModel();
     }
 
 
@@ -92,7 +93,7 @@ public class MainController implements Initializable  {
         songTime.setCellValueFactory(new PropertyValueFactory<>("playTime"));
         tableAllsongs.setItems(allSongs);
 
-        allPlaylists = playlistModel.getAllPlaylists();
+        //allPlaylists = playlistModel.getAllPlaylists();
         playlistName.setCellValueFactory(new PropertyValueFactory<>("name"));
         playlistTime.setCellValueFactory(new PropertyValueFactory<>("totalTime"));
         playlistSongs.setCellValueFactory(new PropertyValueFactory<>("allSongs"));

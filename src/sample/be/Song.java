@@ -1,29 +1,30 @@
 package sample.be;
 
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
-
-import java.io.File;
-import java.util.concurrent.TimeUnit;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class Song {
 
-    private String title;
-    private String artist;
-    private String genre;
+    private StringProperty title;
+    private StringProperty artist;
+    private StringProperty genre;
     private String location;
     private final int playtime;
     private final int ID;
 
     public Song(String title, String artist, String genre, String location, int playtime, int id) {
 
-        this.title = title;
-        this.artist = artist;
-        this.genre = genre;
+        this.title = new SimpleStringProperty();
+        this.artist = new SimpleStringProperty();
+        this.genre = new SimpleStringProperty();
         this.location = location;
         this.playtime = playtime;
         ID = id;
+
+        setTitle(title);
+        setArtist(artist);
+        setGenre(genre);
+        setLocation(location);
   }
 
 
@@ -35,28 +36,40 @@ public class Song {
         this.location = location;
     }
 
-    public String getTitle() {
+    public StringProperty getTitleProperty() {
+        return title;
+    }
+
+    public StringProperty getArtistProperty() {
+        return artist;
+    }
+
+    public StringProperty getGenreProperty() {
+        return genre;
+    }
+
+    public StringProperty getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.title.set(title);
     }
 
     public String getArtist() {
-        return artist;
+        return artist.get();
     }
 
     public void setArtist(String artist) {
-        this.artist = artist;
+        this.artist.set(artist);
     }
 
     public String getGenre() {
-        return genre;
+        return genre.get();
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
+        this.genre.set(genre);
     }
 
     public int getPlaytime() {
@@ -68,7 +81,7 @@ public class Song {
     }
 
     public String toString() {
-        return title;
+        return this.getTitle() + " " + this.getArtist();
     }
 
     public String getPlaytimeString() {

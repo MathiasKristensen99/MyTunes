@@ -4,17 +4,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sample.be.Song;
 import sample.bll.SongManager;
-import sample.dal.SongDAO;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
 
 public class SongModel {
 
+
     private ObservableList<Song> allSongs = FXCollections.observableArrayList();
 
-    private SongManager songManager;
+    private final SongManager songManager;
+
 
     public SongModel() throws IOException {
         songManager = new SongManager();
@@ -26,8 +25,8 @@ public class SongModel {
         return allSongs;
     }
 
-    public void addSong (String title, String artist, String genre, int playtime, String location) {
-        songManager.addSong(title, artist, genre, playtime, location);
+    public void addSong (String title, String artist, String genre, int playtime, String location, int id) {
+        songManager.addSong(title, artist, genre, playtime, location, id);
     }
 
     public void deleteSong (Song songDelete) {

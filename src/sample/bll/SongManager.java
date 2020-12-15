@@ -17,7 +17,7 @@ public class SongManager {
         playlistSongDAO = new PlaylistSongDAO();
     }
 
-    public Song addSong(String title, String artist, String genre, int playtime, String location) {
+    public Song addSong(String title, String artist, String genre, int playtime, String location, int id) {
         return songDAO.addSong(title, artist, genre, playtime, location);
     }
 

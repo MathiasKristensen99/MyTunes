@@ -31,6 +31,7 @@ public class SongController implements Initializable {
     public TextField urlField;
     public TextField genreField;
     public Button saveButton;
+    public TextField idField;
     @FXML
     private javafx.scene.control.Button cancelButton;
     @FXML
@@ -74,19 +75,6 @@ public class SongController implements Initializable {
         }
     }
 
-    void setInfo(Song selectedItem) {
-        isEditing = true;
-        songToEdit = selectedItem;
-        timeField.setText(selectedItem.getTitle());
-        if (selectedItem.getArtist() != null) {
-            artistField.setText(selectedItem.getArtist());
-        }
-        urlField.setText(selectedItem.getLocation());
-        if (selectedItem.getGenre() != null) {
-            genreField.setText(selectedItem.getGenre());
-        }
-        mediaPlayer = new MediaPlayer(new Media(new File(selectedItem.getLocation()).toURI().toString()));
-    }
 
     @FXML
     private void cancelButtonAction() {
@@ -98,15 +86,16 @@ public class SongController implements Initializable {
     }
 
     public void saveSong(javafx.event.ActionEvent actionEvent) {
-        int i = toIntExact(Math.round(mediaPlayer.getMedia().getDuration().toSeconds()));
-        String name = titleField.getText().trim();
-        if (name != null && name.length() > 0 && name.length() < 50 && urlField.getText() != null && urlField.getText().length() != 0 && i > 0) {
-            if(!isEditing) {
-                songModel.addSong(name, artistField.getText(), genreField.getText(), i, urlField.getText());
-            }
-            else {
-                songModel.updateSong(songToEdit, name, artistField.getText(), genreField.getText(), i, urlField.getText());
-            }
-        }
+        String title = titleField.getText();
+        String artist = artistField.getText();
+        String genre = genreField.getText();
+        int playtime = Integer.parseInt(timeField.getText());
+        String location = urlField.getText();
+        int id = Integer.parseInt(idField.getText());
+
+        Song newSong = new Song(title, artist, genre, location, playtime, id);
+        newSong.setLocation(location);
+
+        this.songModel.addSong(title, artist, genre, playtime, location, id);
     }
 }

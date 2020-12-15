@@ -10,6 +10,7 @@
     <orderEntry type="library" name="com.microsoft.sqlserver:mssql-jdbc:6.4.0.jre9" level="project" />
     <orderEntry type="library" name="org.openjfx:javafx-fxml:15-ea+8" level="project" />
     <orderEntry type="library" name="org.openjfx:javafx-media:16-ea+5" level="project" />
-    <orderEntry type="library" name="org.apache.tika:tika:0.3" level="project" />
+    <orderEntry type="library" name="org.apache.tika:tika-java7:1.12" level="project" />
+    <orderEntry type="library" name="sax:sax:2.0.1" level="project" />
   </component>
 </module>

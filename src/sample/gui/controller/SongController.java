@@ -12,12 +12,17 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import org.apache.tika.metadata.Metadata;
+import org.apache.tika.parser.ParseContext;
+import org.apache.tika.parser.Parser;
+import org.apache.tika.parser.mp3.Mp3Parser;
+import org.xml.sax.ContentHandler;
+import org.xml.sax.helpers.DefaultHandler;
 import sample.be.Song;
 import sample.gui.model.SongModel;
 
 import java.awt.event.ActionEvent;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -35,7 +40,6 @@ public class SongController implements Initializable {
     @FXML
     private javafx.scene.control.Button cancelButton;
     @FXML
-    private AnchorPane root;
 
     private final SongModel songModel = new SongModel();
     private final MainController mainController = new MainController();
@@ -43,7 +47,6 @@ public class SongController implements Initializable {
     private MediaPlayer mediaPlayer;
     private boolean isEditing = false;
     private Song songToEdit;
-
 
 
     public SongController() throws IOException {
@@ -54,27 +57,33 @@ public class SongController implements Initializable {
 
     }
 
-    //i dont know
-    public void moreClicked(MouseEvent mouseEvent) {
-    }
-
-    @FXML
-    private void chooseFileMethod(ActionEvent actionEvent){
-
-    }
-
-    public void chooseFileMethod(javafx.event.ActionEvent actionEvent) {
+    public void chooseFileMethod(javafx.event.ActionEvent actionEvent) throws FileNotFoundException {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select a file");
-        FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("Sound files (*.wav , *.mp3)", "*.wav", "*.mp3");
-        fileChooser.getExtensionFilters().add(extensionFilter);
-        File selectedFile = fileChooser.showOpenDialog(null);
-        if (selectedFile != null) {
-            urlField.setText(selectedFile.getAbsolutePath());
-            mediaPlayer = new MediaPlayer(new Media(selectedFile.getAbsolutePath()));
+        fileChooser.setTitle("Choose file");
+        File file = fileChooser.showOpenDialog(stage);
+        if (file.toString() != null) {
+            String location = file.toString().replaceAll("\\\\", "/");
+            try {
+                InputStream inputStream = new FileInputStream(new File(location));
+                ContentHandler contentHandler = new DefaultHandler();
+                Metadata metaData = new Metadata();
+                Parser parser = new Mp3Parser();
+                ParseContext parserContext = new ParseContext();
+                parser.parse(inputStream, contentHandler, metaData, parserContext);
+                inputStream.close();
+                String[] metadataName = metaData.names();
+
+                titleField.setText(metaData.get("title"));
+                artistField.setText(metaData.get("artist"));
+                genreField.setText(metaData.get("genre"));
+                timeField.setText(String.valueOf((int) Math.round(Double.parseDouble(metaData.get("playtime")))));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            urlField.setText(location);
         }
     }
-
 
     @FXML
     private void cancelButtonAction() {

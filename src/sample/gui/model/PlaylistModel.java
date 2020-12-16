@@ -27,7 +27,7 @@ public class PlaylistModel {
     public void createPlaylist (String name) {
         playlistManager.createPlaylist(name);
     }
-
+    /*
     public void deletePlaylist (Playlist playlist) {
         playlistManager.deletePlaylist(playlist);
     }
@@ -43,4 +43,5 @@ public class PlaylistModel {
     public void removeSongFromPlaylist (Playlist selectedItem, Song selectedSong) {
         playlistManager.removeSongFromPlaylist(selectedItem, selectedSong);
     }
+     */
 }

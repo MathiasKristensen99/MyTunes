@@ -63,7 +63,7 @@ public class PlaylistController implements Initializable {
 
 
 
-    //safe action
+    /*
     @FXML
     private void safeButtonAction(ActionEvent event) {
         String name = nameField.getText().trim();
@@ -84,10 +84,8 @@ public class PlaylistController implements Initializable {
 
 
         /*Stage stage = (Stage) safeButton.getScene().getWindow();
-        stage.close();*/
-
-    }
-
+        stage.close();
+        */
     void setInfo(Playlist selectedItem){
         isEditing = true;
         editingList = selectedItem;

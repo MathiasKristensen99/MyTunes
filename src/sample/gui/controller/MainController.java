@@ -8,15 +8,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import jdk.jfr.Category;
 import sample.be.Playlist;
 import sample.be.Song;
 import sample.gui.model.PlaylistModel;
@@ -28,7 +23,6 @@ import javafx.scene.media.MediaPlayer;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -36,7 +30,12 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable  {
 
 
-
+    public Slider volumeSlider;
+    public Button btnStop;
+    public TextField searchTextField;
+    public Button btnSearch;
+    public Label lblCurrentSong;
+    public Button btnPlay;
 
     private ObservableList<Playlist> allPlaylists = FXCollections.observableArrayList();
     private ObservableList<Song> allSongs = FXCollections.observableArrayList();
@@ -44,14 +43,15 @@ public class MainController implements Initializable  {
     private final SongModel songModel;
     private final PlaylistModel playlistModel = new PlaylistModel();
 
+
     @FXML
     private javafx.scene.control.Button closeButton;
     @FXML
     private TableView<Song> tableAllsongs;
     @FXML
     private TableView<Playlist> tableAllPlaylists;
-    /*@FXML
-    private ListView listViewSongs;*/
+    @FXML
+    private ListView listViewSongs;
     @FXML
     private TableColumn<Song, String> songTitle;
     @FXML
@@ -67,26 +67,20 @@ public class MainController implements Initializable  {
     @FXML
     private TableColumn<Song, Integer> playlistTime;
 
+    private MediaPlayer mediaPlayer;
+    private int currentSongPlaying = 0;
 
-    File songFile = new File("data/songs/Kom_Kom_-_Rune_Rk__Og_Stanley_Most.mp3");
+
 
     public MainController() throws IOException {
         songModel = new SongModel();
     }
 
 
-    // PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER PLAY CONTROLLER
-
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
-        //MediaPlayer mediaPlayer = new MediaPlayer(new Media(new File("src/Resources/Kom_Kom_-_Rune_Rk__Og_Stanley_Most.mp3").toURI().toString()));
-        //mediaPlayer.setOnReady(() -> {
-            //allSongs.addAll(songModel.getAllSongs());
-        //});
-
         allSongs = songModel.getAllSongs();
+        //songTitle.cellValueFactoryProperty().setValue(cellData -> cellData.getValue().getTitleProperty());
         songTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         songArtist.setCellValueFactory(new PropertyValueFactory<>("artist"));
         songCategory.setCellValueFactory(new PropertyValueFactory<>("genre"));
@@ -108,29 +102,11 @@ public class MainController implements Initializable  {
         tableAllPlaylists.setItems(playlistModel.getAllPlaylists());
     }
 
-    @FXML
-    private void songNameDisplay(){
 
-
-    }
-
-    //Play ore Pause the song
-    public void playPressed(MouseEvent mouseEvent) {
-
-    }
-    //Play the next song from the Playlist.
-    public void nextSong(MouseEvent mouseEvent) {
-
-    }
-
-    //Play the last song again.
-    public void lastSong(MouseEvent mouseEvent) {
-
-    }
-    //open Song edit scene
+    //open new song scene
     public void newButtonAction(ActionEvent actionEvent) throws IOException {
         Parent root1;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/gui/view/Song.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/gui/view/NewSong.fxml"));
         root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
@@ -154,19 +130,6 @@ public class MainController implements Initializable  {
     private void closeButtonAction() {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
-
-
-    }
-
-
-
-    //Add new song to the register (
-
-
-
-    //Delete choosen song
-    public void songDeleteClicked(MouseEvent mouseEvent) {
-
     }
 
     //Edit choosen song
@@ -211,7 +174,6 @@ public class MainController implements Initializable  {
 
     }
 
-
     public void playlistNewButtonAction(ActionEvent actionEvent)throws IOException {
         Parent root2;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/gui/view/Playlist.fxml"));
@@ -223,6 +185,51 @@ public class MainController implements Initializable  {
         stage.show();
     }
 
+    public void playSong(ActionEvent actionEvent) {
+        if (mediaPlayer == null && tableAllsongs.getSelectionModel().getSelectedIndex() != -1) {
+            currentSongPlaying = tableAllsongs.getSelectionModel().getSelectedIndex();
+            play();
+        }
+    }
+
+    public void stopSong(ActionEvent actionEvent) {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            lblCurrentSong.setText("No song is playing");
+            mediaPlayer = null;
+        }
+    }
+
+    private void play() {
+        mediaPlayer = new MediaPlayer(new Media(new File(tableAllsongs.getItems().get(currentSongPlaying).getLocation()).toURI().toString()));
+        tableAllsongs.getSelectionModel().clearAndSelect(currentSongPlaying);
+        mediaPlayer.play();
+        mediaPlayer.setVolume(50);
+        lblCurrentSong.setText(tableAllsongs.getItems().get(currentSongPlaying).getTitle().toString());
+    }
+
+    public void refreshSongs(ActionEvent actionEvent) {
+        tableAllsongs.getItems().clear();
+        tableAllsongs.setItems(songModel.getAllSongs());
+    }
+
+    public void deleteSong(ActionEvent actionEvent) {
+        if (tableAllsongs.getSelectionModel().getSelectedIndex() != -1) {
+            songModel.deleteSong(tableAllsongs.getSelectionModel().getSelectedItem());
+        }
+    }
+
+    public void searchSong(ActionEvent actionEvent) {
+        if (searchTextField.getText() == null || searchTextField.getText().length() <= 0) {
+            tableAllsongs.setItems(songModel.getAllSongs());
+        }
+        else {
+            ObservableList<Song> songSearcher = songModel.searchSongs(songModel.getAllSongs(), searchTextField.getText());
+            if (songSearcher != null) {
+                tableAllsongs.setItems(songSearcher);
+            }
+        }
+    }
 }
 
 

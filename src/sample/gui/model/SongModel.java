@@ -37,4 +37,8 @@ public class SongModel {
         songManager.updateSong(songDelete, title, artist, genre, playtime, location);
     }
 
+    public ObservableList<Song> searchSongs (ObservableList<Song> songs, String text) {
+        return songManager.searchSongs(songs, text);
+    }
+
 }

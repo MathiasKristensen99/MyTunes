@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gui.controller.NewSongController">
+   <children>
+      <Text layoutX="142.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" textAlignment="RIGHT" />
+      <Text layoutX="140.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:" textAlignment="RIGHT" />
+      <Text layoutX="120.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category:" />
+      <Text layoutX="141.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time:" />
+      <Text layoutX="145.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File:" />
+      <TextField fx:id="titleField" layoutX="197.0" layoutY="79.0" />
+      <TextField fx:id="artistField" layoutX="197.0" layoutY="118.0" />
+      <TextField fx:id="timeField" layoutX="197.0" layoutY="196.0" />
+      <TextField fx:id="urlField" layoutX="197.0" layoutY="240.0" prefHeight="26.0" prefWidth="149.0" />
+      <Button layoutX="362.0" layoutY="241.0" mnemonicParsing="false" onAction="#chooseFileMethod" text="Choose..." />
+      <Button fx:id="cancelButton" layoutX="197.0" layoutY="322.0" mnemonicParsing="false" onAction="#cancelButtonAction" onMouseClicked="#cancelClicked" text="Cancel" />
+      <Button fx:id="saveButton" layoutX="305.0" layoutY="322.0" mnemonicParsing="false" onAction="#saveSong" text="Save" />
+      <TextField fx:id="genreField" layoutX="197.0" layoutY="156.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="idField" layoutX="197.0" layoutY="281.0" />
+      <Label layoutX="150.0" layoutY="285.0" prefHeight="17.0" prefWidth="31.0" text="ID:" />
+   </children>
+</AnchorPane>

@@ -14,9 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane onMouseClicked="#songEditClicked" prefHeight="390.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gui.controller.MainController">
+<AnchorPane onMouseClicked="#songEditClicked" prefHeight="416.0" prefWidth="816.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gui.controller.MainController">
    <children>
-      <Button fx:id="closeButton" layoutX="526.0" layoutY="340.0" mnemonicParsing="false" onAction="#closeButtonAction" scaleX="1.1" text="Close">
+      <Button fx:id="closeButton" layoutX="688.0" layoutY="340.0" mnemonicParsing="false" onAction="#closeButtonAction" scaleX="1.1" text="Close">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -24,15 +24,11 @@
             <Font size="10.0" />
          </font>
       </Button>
-      <Button layoutX="463.0" layoutY="340.0" mnemonicParsing="false" onMouseClicked="#songDeleteClicked" scaleX="1.1" text="Delete">
+      <Button layoutX="577.0" layoutY="340.0" mnemonicParsing="false" scaleX="1.1" text="Edit..">
          <font>
             <Font size="10.0" />
          </font></Button>
-      <Button layoutX="408.0" layoutY="340.0" mnemonicParsing="false" scaleX="1.1" text="Edit..">
-         <font>
-            <Font size="10.0" />
-         </font></Button>
-      <Button fx:id="newButton" layoutX="351.0" layoutY="340.0" mnemonicParsing="false" onAction="#newButtonAction" scaleX="1.1" text="New..">
+      <Button fx:id="newButton" layoutX="372.0" layoutY="340.0" mnemonicParsing="false" onAction="#newButtonAction" prefHeight="23.0" prefWidth="75.0" scaleX="1.1" text="New Song">
          <font>
             <Font size="10.0" />
          </font></Button>
@@ -63,35 +59,15 @@
       <Label layoutX="15.0" layoutY="70.0" text="Playlist" />
       <Label layoutX="190.0" layoutY="70.0" text="Songs on Playlist" />
       <Label layoutX="351.0" layoutY="70.0" text="Songs" />
-      <TextField layoutX="414.0" layoutY="30.0" prefHeight="26.0" prefWidth="118.0" />
-      <Label layoutX="377.0" layoutY="34.0" text="Filter:" />
-      <Slider layoutX="22.0" layoutY="50.0" prefHeight="14.0" prefWidth="146.0" />
-      <ImageView fitHeight="26.0" fitWidth="33.0" layoutX="76.0" layoutY="18.0">
-         <image>
-            <Image url="@../../../../../MyTunes/data/pictures/pauseButton.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="118.0" layoutY="14.0" onMouseClicked="#nextSong">
-         <image>
-            <Image url="@../../../../data/pictures/fastForward.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="33.0" layoutY="14.0" onMouseClicked="#lastSong" rotate="180.0">
-         <image>
-            <Image url="@../../../../data/pictures/fastForwardd.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="533.0" layoutY="27.0" onMouseClicked="#magnifyingGlassClicked">
-         <image>
-            <Image url="@../../../../../MyTunes/data/pictures/sherlock.png" />
-         </image>
-      </ImageView>
-      <TableView fx:id="tableAllsongs" layoutX="351.0" layoutY="89.0" prefHeight="239.0" prefWidth="223.0">
+      <TextField fx:id="searchTextField" layoutX="568.0" layoutY="30.0" prefHeight="26.0" prefWidth="118.0" />
+      <Label layoutX="531.0" layoutY="35.0" text="Filter:" />
+      <Slider fx:id="volumeSlider" layoutX="22.0" layoutY="50.0" prefHeight="14.0" prefWidth="146.0" />
+      <TableView fx:id="tableAllsongs" layoutX="363.0" layoutY="89.0" prefHeight="239.0" prefWidth="435.0">
         <columns>
-          <TableColumn fx:id="songTitle" prefWidth="53.0" text="Title" />
-          <TableColumn fx:id="songArtist" prefWidth="57.0" text="Artist" />
-            <TableColumn fx:id="songCategory" prefWidth="55.20001220703125" text="Category" />
-            <TableColumn fx:id="songTime" prefWidth="63.199951171875" text="Time" />
+          <TableColumn fx:id="songTitle" prefWidth="220.0" text="Title" />
+          <TableColumn fx:id="songArtist" prefWidth="91.0" text="Artist" />
+            <TableColumn fx:id="songCategory" prefWidth="65.0" text="Category" />
+            <TableColumn fx:id="songTime" minWidth="6.0" prefWidth="53.0" text="Time" />
         </columns>
       </TableView>
       <Button layoutX="319.0" layoutY="89.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
@@ -112,16 +88,16 @@
             <Image url="@../../../../../MyTunes/data/pictures/Arrowww.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="76.0" layoutY="15.0">
-         <image>
-            <Image url="@../../../../../MyTunes/data/pictures/pauseButton.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="73.0" layoutY="11.0" onMouseClicked="#playPressed">
-         <image>
-            <Image url="@../../../../../MyTunes/data/pictures/officialPlayButton.png" />
-         </image>
-      </ImageView>
-      <TextFlow fx:id="songNameDisplay" layoutX="180.0" layoutY="27.0" prefHeight="26.0" prefWidth="191.0" />
+      <TextFlow fx:id="songNameDisplay" layoutX="227.0" layoutY="28.0" prefHeight="26.0" prefWidth="75.0" />
+      <Label fx:id="lblCurrentSong" alignment="CENTER" layoutX="211.0" layoutY="6.0" prefHeight="17.0" prefWidth="263.0" text="Label" />
+      <Button fx:id="btnPlay" layoutX="270.0" layoutY="31.0" mnemonicParsing="false" onAction="#playSong" prefHeight="25.0" prefWidth="71.0" text="&gt;" />
+      <Button fx:id="btnStop" layoutX="358.0" layoutY="31.0" mnemonicParsing="false" onAction="#stopSong" prefHeight="25.0" prefWidth="71.0" text="||" />
+      <Button fx:id="btnRefresh" layoutX="474.0" layoutY="339.0" mnemonicParsing="false" onAction="#refreshSongs" prefHeight="17.0" prefWidth="71.0" text="Refresh" />
+      <Button fx:id="btnDelete" layoutX="627.0" layoutY="340.0" mnemonicParsing="false" onAction="#deleteSong" text="Delete">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSearch" layoutX="686.0" layoutY="31.0" mnemonicParsing="false" onAction="#searchSong" text="Search" />
    </children>
 </AnchorPane>

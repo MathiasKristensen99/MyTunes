@@ -1,6 +1,8 @@
 package sample.bll;
 
+import javafx.collections.ObservableList;
 import sample.be.Song;
+import sample.bll.util.SongFilter;
 import sample.dal.PlaylistSongDAO;
 import sample.dal.SongDAO;
 
@@ -11,10 +13,12 @@ import java.util.List;
 public class SongManager {
     private  SongDAO songDAO;
     private  PlaylistSongDAO playlistSongDAO;
+    private  SongFilter songFilter;
 
     public SongManager() throws IOException {
         songDAO = new SongDAO();
         playlistSongDAO = new PlaylistSongDAO();
+        songFilter = new SongFilter();
     }
 
     public Song addSong(String title, String artist, String genre, int playtime, String location, int id) {
@@ -31,5 +35,9 @@ public class SongManager {
     public List<Song> getSongs() {
         List<Song> allSongs = songDAO.getSongs();
         return allSongs;
+    }
+
+    public ObservableList<Song> searchSongs(ObservableList<Song> songs, String text) {
+        return songFilter.searchSong(songs, text);
     }
 }

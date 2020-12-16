@@ -29,7 +29,7 @@ public class PlaylistManager {
     public List<Playlist> getAllPlaylists() {
         return playlistDAO.getAllPlaylists();
     }
-
+    /*
     public void deletePlaylist(Playlist play) {
         playlistSongDAO.deleteFromPlaylistSongsEverything(play);
         playlistDAO.deletePlaylist(play);
@@ -42,4 +42,5 @@ public class PlaylistManager {
     public void removeSongFromPlaylist(Playlist selectedItem, Song selectedSong) {
         playlistSongDAO.removeSongFromPlaylist(selectedItem, selectedSong);
     }
+     */
 }

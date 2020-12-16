@@ -42,25 +42,6 @@ public class PlaylistSongDAO {
         }
     }
 
-    /*
-    Removes a specific song from every playlist in the Playlist Song database table. (So the song can be removed from the song database table)
-     */
-    public void deleteFromPlaylistSongsEverything(Song songToDelete) {
-        try (Connection con = databaseConnector.getConnection()) {
-            String query = "DELETE from PlaylistSong WHERE SongID = ?";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setInt(1, songToDelete.getID());
-            preparedStmt.execute();
-        } catch (SQLServerException ex) {
-            System.out.println(ex);
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-    }
-
-    /*
-    Adds song to playlist
-     */
     public Song addToPlaylist(Playlist playlist, Song song) {
         String sql = "INSERT INTO PlaylistSong(PlaylistID,SongID) VALUES (?,?,?)";
         int Id = -1;
@@ -84,19 +65,6 @@ public class PlaylistSongDAO {
 
     /*
     Deletes playlist from the Playlist song table in database. (It allows playlist to be deleted from playlist table)
-     */
-    public void deleteFromPlaylistSongsEverything(Playlist play) {
-        try (Connection con = databaseConnector.getConnection()) {
-            String query = "DELETE from PlaylistSong WHERE PlaylistID = ?";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setInt(1, play.getID());
-            preparedStmt.execute();
-        } catch (SQLServerException ex) {
-            System.out.println(ex);
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-    }
 
     /*
     Removes a specific song from playlist.

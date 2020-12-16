@@ -49,6 +49,7 @@ public class PlaylistDAO {
         }
         return totalTime;
     }
+
     public Playlist createPlaylist(String name) {
         String sql = "INSERT INTO Playlist(name) VALUES (?)";
         try (Connection connection = databaseConnector.getConnection()) {
@@ -80,31 +81,6 @@ public class PlaylistDAO {
         } catch (SQLException ex) {
             System.out.println(ex);
             return newestID;
-        }
-    }
-    public void updatePlaylist(Playlist selectedItem, String name) {
-        try (Connection connection = databaseConnector.getConnection()) {
-            String query = "UPDATE Playlist set name = ? WHERE id = ?";
-            PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1, name);
-            preparedStmt.setInt(2, selectedItem.getID());
-            preparedStmt.executeUpdate();
-        } catch (SQLServerException ex) {
-            System.out.println(ex);
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-    }
-    public void deletePlaylist(Playlist play) {
-        try (Connection connection = databaseConnector.getConnection()) {
-            String query = "DELETE from Playlist WHERE id = ?";
-            PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setInt(1, play.getID());
-            preparedStmt.execute();
-        } catch (SQLServerException ex) {
-            System.out.println(ex);
-        } catch (SQLException ex) {
-            System.out.println(ex);
         }
     }
 

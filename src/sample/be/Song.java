@@ -1,75 +1,67 @@
 package sample.be;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
 public class Song {
 
-    private StringProperty title;
-    private StringProperty artist;
-    private StringProperty genre;
-    private String location;
+    private String title;
+    private String artist;
+    private String genre;
+
+
     private final int playtime;
     private final int ID;
+    private String path;
+    private String Location;
+
+
 
     public Song(String title, String artist, String genre, String location, int playtime, int id) {
 
-        this.title = new SimpleStringProperty();
-        this.artist = new SimpleStringProperty();
-        this.genre = new SimpleStringProperty();
-        this.location = location;
+        this.title = title;
+        this.artist = artist;
+        this.genre = genre;
         this.playtime = playtime;
         ID = id;
 
         setTitle(title);
         setArtist(artist);
-        setGenre(genre);
         setLocation(location);
-  }
-
+        setGenre(genre);
+    }
 
     public String getLocation() {
-        return location;
+        return Location;
     }
 
     public void setLocation(String location) {
-        this.location = location;
+        Location = location;
     }
 
-    public StringProperty getTitleProperty() {
+    public String getTitleProperty() {
         return title;
     }
 
-    public StringProperty getArtistProperty() {
-        return artist;
-    }
-
-    public StringProperty getGenreProperty() {
-        return genre;
-    }
-
-    public StringProperty getTitle() {
+    public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
-        this.title.set(title);
+        this.title = title;
     }
 
     public String getArtist() {
-        return artist.get();
+        return artist;
     }
 
     public void setArtist(String artist) {
-        this.artist.set(artist);
+        this.artist = artist;
     }
 
     public String getGenre() {
-        return genre.get();
+        return genre;
     }
 
     public void setGenre(String genre) {
-        this.genre.set(genre);
+        this.genre = genre;
     }
 
     public int getPlaytime() {

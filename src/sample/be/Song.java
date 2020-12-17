@@ -76,22 +76,4 @@ public class Song {
         return this.getTitle() + " " + this.getArtist();
     }
 
-    public String getPlaytimeString() {
-        String minutesString;
-        String secondString;
-        int minutes = playtime / 60;
-        if (minutes < 10) {
-            minutesString = "0" + minutes;
-        } else {
-            minutesString = "" + minutes;
-        }
-        int seconds = playtime % 60;
-        if (10 > seconds) {
-            secondString = "0" + seconds;
-        } else {
-            secondString = "" + seconds;
-        }
-        return minutesString + ":" + secondString;
-    }
-
 }

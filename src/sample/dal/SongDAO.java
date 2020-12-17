@@ -106,9 +106,9 @@ public class SongDAO {
 
     public Song deleteSong(Song songDelete) {
         try (Connection connection = databaseConnector.getConnection()) {
-            String query = "DELETE from Song WHERE id = ?";
+            String query = "DELETE from Song WHERE title = ?";
             PreparedStatement preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setInt(1, songDelete.getID());
+            preparedStmt.setString(1, songDelete.getTitle());
             preparedStmt.execute();
         } catch (SQLServerException ex) {
             System.out.println(ex);

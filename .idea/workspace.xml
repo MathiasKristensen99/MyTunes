@@ -21,8 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8f4b3127-581b-47d1-a470-80a2fd652257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyTunes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyTunes.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/gui/controller/SongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/controller/SongController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/be/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/be/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/bll/SongManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/bll/SongManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/dal/SongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dal/SongDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/gui/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/gui/view/MyTunes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/gui/view/MyTunes.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +98,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="MyTunes" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\mathi\OneDrive\Dokumenter\Datamatiker\SCO1\Java SDK\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\mathi\OneDrive\Dokumenter\Datamatiker\SCO1\Java SDK\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.media,javafx.fxml" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -184,15 +187,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -240,6 +241,7 @@
       <workItem from="1607940425644" duration="6886000" />
       <workItem from="1607989088656" duration="5224000" />
       <workItem from="1608028802122" duration="11210000" />
+      <workItem from="1608209170038" duration="3851000" />
     </task>
     <servers />
   </component>
@@ -263,11 +265,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="906" y="378" key="#Inspections/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1608032869647" />
-    <state x="734" y="355" width="789" height="669" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607900385470">
+    <state x="734" y="355" width="789" height="669" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608210433799">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="440" y="155" width="789" height="669" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1607710934532" />
-    <state x="734" y="355" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607900385470" />
+    <state x="734" y="355" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1608210433799" />
     <state x="636" y="235" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1607691468332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -294,34 +296,34 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="986" y="441" key="FileChooserDialogImpl/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1607507060393" />
-    <state width="2517" height="258" key="GridCell.Tab.0.bottom" timestamp="1608042418226">
+    <state width="1236" height="153" key="GridCell.Tab.0.bottom" timestamp="1608211238332">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="270" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-720.1280.680@0.0.1536.824" timestamp="1607703319203" />
     <state width="1493" height="270" key="GridCell.Tab.0.bottom/0.0.1536.824/312.-720.1280.680@0.0.1536.824" timestamp="1607707654626" />
     <state width="1493" height="532" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607727267450" />
-    <state width="2517" height="258" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1608042418226" />
-    <state width="2517" height="258" key="GridCell.Tab.0.center" timestamp="1608042418226">
+    <state width="1236" height="153" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1608211238332" />
+    <state width="1236" height="153" key="GridCell.Tab.0.center" timestamp="1608211238332">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="270" key="GridCell.Tab.0.center/0.0.1536.824/0.-720.1280.680@0.0.1536.824" timestamp="1607703319203" />
     <state width="1493" height="270" key="GridCell.Tab.0.center/0.0.1536.824/312.-720.1280.680@0.0.1536.824" timestamp="1607707654625" />
     <state width="1493" height="532" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607727267450" />
-    <state width="2517" height="258" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1608042418226" />
-    <state width="2517" height="258" key="GridCell.Tab.0.left" timestamp="1608042418226">
+    <state width="1236" height="153" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1608211238332" />
+    <state width="1236" height="153" key="GridCell.Tab.0.left" timestamp="1608211238332">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="270" key="GridCell.Tab.0.left/0.0.1536.824/0.-720.1280.680@0.0.1536.824" timestamp="1607703319203" />
     <state width="1493" height="270" key="GridCell.Tab.0.left/0.0.1536.824/312.-720.1280.680@0.0.1536.824" timestamp="1607707654625" />
     <state width="1493" height="532" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607727267450" />
-    <state width="2517" height="258" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1608042418226" />
-    <state width="2517" height="258" key="GridCell.Tab.0.right" timestamp="1608042418226">
+    <state width="1236" height="153" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1608211238332" />
+    <state width="1236" height="153" key="GridCell.Tab.0.right" timestamp="1608211238332">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1493" height="270" key="GridCell.Tab.0.right/0.0.1536.824/0.-720.1280.680@0.0.1536.824" timestamp="1607703319203" />
     <state width="1493" height="270" key="GridCell.Tab.0.right/0.0.1536.824/312.-720.1280.680@0.0.1536.824" timestamp="1607707654625" />
     <state width="1493" height="532" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607727267450" />
-    <state width="2517" height="258" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1608042418226" />
+    <state width="1236" height="153" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.360.1920.1080@0.0.2560.1400" timestamp="1608211238332" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1607539639326">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

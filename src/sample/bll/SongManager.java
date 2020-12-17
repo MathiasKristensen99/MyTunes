@@ -32,6 +32,7 @@ public class SongManager {
     public Song deleteSong(Song songDelete) {
         return songDAO.deleteSong(songDelete);
     }
+
     public List<Song> getSongs() {
         List<Song> allSongs = songDAO.getSongs();
         return allSongs;

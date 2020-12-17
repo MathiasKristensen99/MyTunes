@@ -36,13 +36,8 @@ public class MainController implements Initializable  {
     public Button btnSearch;
     public Label lblCurrentSong;
     public Button btnPlay;
-
-    private ObservableList<Playlist> allPlaylists = FXCollections.observableArrayList();
-    private ObservableList<Song> allSongs = FXCollections.observableArrayList();
-
-    private final SongModel songModel;
-    private final PlaylistModel playlistModel = new PlaylistModel();
-
+    public Button btnForward;
+    public Button btnBack;
 
     @FXML
     private javafx.scene.control.Button closeButton;
@@ -69,7 +64,10 @@ public class MainController implements Initializable  {
 
     private MediaPlayer mediaPlayer;
     private int currentSongPlaying = 0;
-
+    private final SongModel songModel;
+    private final PlaylistModel playlistModel = new PlaylistModel();
+    private ObservableList<Playlist> allPlaylists = FXCollections.observableArrayList();
+    private ObservableList<Song> allSongs = FXCollections.observableArrayList();
 
 
     public MainController() throws IOException {
@@ -80,11 +78,10 @@ public class MainController implements Initializable  {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         allSongs = songModel.getAllSongs();
-        //songTitle.cellValueFactoryProperty().setValue(cellData -> cellData.getValue().getTitleProperty());
         songTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         songArtist.setCellValueFactory(new PropertyValueFactory<>("artist"));
         songCategory.setCellValueFactory(new PropertyValueFactory<>("genre"));
-        songTime.setCellValueFactory(new PropertyValueFactory<>("playTime"));
+        songTime.setCellValueFactory(new PropertyValueFactory<>("playtime"));
         tableAllsongs.setItems(allSongs);
 
         //allPlaylists = playlistModel.getAllPlaylists();
@@ -93,15 +90,12 @@ public class MainController implements Initializable  {
         playlistSongs.setCellValueFactory(new PropertyValueFactory<>("allSongs"));
         tableAllPlaylists.setItems(allPlaylists);
 
-
-
     }
 
     public void refreshPlaylist(){
         tableAllPlaylists.getItems().clear();
         tableAllPlaylists.setItems(playlistModel.getAllPlaylists());
     }
-
 
     //open new song scene
     public void newButtonAction(ActionEvent actionEvent) throws IOException {
@@ -115,63 +109,11 @@ public class MainController implements Initializable  {
         stage.show();
     }
 
-    //SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX SEARCH BOX
-
-    //filter the songs with the text in the search box
-    public void magnifyingGlassClicked(MouseEvent mouseEvent) {
-
-    }
-
-
-    //SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER SONG REGISTER
-
     //Close the application
     @FXML
     private void closeButtonAction() {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
-    }
-
-    //Edit choosen song
-    public void songEditClicked(MouseEvent mouseEvent) {
-
-    }
-
-    //Add the choosen song to the choosen playlist
-    public void arrowLeftClicked(MouseEvent mouseEvent) {
-
-    }
-
-
-    //SONGS IN PLAYLIST SONGS IN PLAYLIST SONGS IN PLAYLIST SONGS IN PLAYLIST SONGS IN PLAYLIST SONGS IN PLAYLIST SONGS IN PLAYLIST SONGS IN PLAYLIST
-
-    //Remove song from playlist
-    public void songPlaylistDeleteClicked(MouseEvent mouseEvent) {
-    }
-
-    //GO up in playlist register
-    public void arrowUpClicked(MouseEvent mouseEvent) {
-
-    }
-
-
-    //Go down in playlist register
-    public void arrowDownClicked(MouseEvent mouseEvent) {
-
-    }
-
-    //PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU PLAYLIST MENU
-
-
-
-    //Edit the choosen playlist
-    public void editPlaylistClicked(MouseEvent mouseEvent) {
-
-    }
-
-    //Delete the choosen playlist
-    public void deletePlaylistClicked(MouseEvent mouseEvent) {
-
     }
 
     public void playlistNewButtonAction(ActionEvent actionEvent)throws IOException {
@@ -229,6 +171,53 @@ public class MainController implements Initializable  {
                 tableAllsongs.setItems(songSearcher);
             }
         }
+    }
+
+    public void skipForward(ActionEvent actionEvent) {
+        if (tableAllsongs.getSelectionModel().getSelectedIndex() != -1) {
+            mediaPlayer.stop();
+            if (currentSongPlaying + 1 == tableAllsongs.getItems().size()) {
+                currentSongPlaying = 0;
+            }
+            else {
+                currentSongPlaying++;
+            }
+            play();
+        }
+    }
+
+    public void skipBack(ActionEvent actionEvent) {
+        if (tableAllsongs.getSelectionModel().getSelectedIndex() != -1) {
+            mediaPlayer.stop();
+            if (currentSongPlaying - 1 == -1) {
+                currentSongPlaying = 0;
+            }
+            else {
+                currentSongPlaying--;
+            }
+            play();
+        }
+    }
+
+    public void editPlaylistClicked(MouseEvent mouseEvent) {
+    }
+
+    public void deletePlaylistClicked(MouseEvent mouseEvent) {
+    }
+
+    public void songPlaylistDeleteClicked(MouseEvent mouseEvent) {
+    }
+
+    public void songEditClicked(MouseEvent mouseEvent) {
+    }
+
+    public void arrowLeftClicked(MouseEvent mouseEvent) {
+    }
+
+    public void arrowUpClicked(MouseEvent mouseEvent) {
+    }
+
+    public void arrowDownClicked(MouseEvent mouseEvent) {
     }
 }
 

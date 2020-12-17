@@ -76,7 +76,7 @@ public class NewSongController implements Initializable {
                 titleField.setText(metaData.get("title"));
                 artistField.setText(metaData.get("artist"));
                 genreField.setText(metaData.get("genre"));
-                //timeField.setText(String.valueOf((int) Math.round(Double.parseDouble(metaData.get("playtime")))));
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -3,7 +3,7 @@ package sample.bll;
 import javafx.collections.ObservableList;
 import sample.be.Song;
 import sample.bll.util.SongFilter;
-import sample.dal.PlaylistSongDAO;
+
 import sample.dal.SongDAO;
 
 import java.io.IOException;
@@ -12,12 +12,10 @@ import java.util.List;
 
 public class SongManager {
     private  SongDAO songDAO;
-    private  PlaylistSongDAO playlistSongDAO;
     private  SongFilter songFilter;
 
     public SongManager() throws IOException {
         songDAO = new SongDAO();
-        playlistSongDAO = new PlaylistSongDAO();
         songFilter = new SongFilter();
     }
 

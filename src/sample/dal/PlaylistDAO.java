@@ -11,9 +11,7 @@ import java.util.List;
 
 public class PlaylistDAO {
 
-    PlaylistSongDAO PlaylistSongInfo = new PlaylistSongDAO();
     private DatabaseDAO databaseConnector;
-
 
     public PlaylistDAO() throws IOException {
         databaseConnector = new DatabaseDAO();
@@ -29,11 +27,8 @@ public class PlaylistDAO {
             while (rs.next()) {
                 String name = rs.getString("PlaylistName");
                 int id = rs.getInt("id");
-                List<Song> allSongs = PlaylistSongInfo.getPlaylistSongs(id);
-                Playlist pl = new Playlist(allSongs.size(), countTotalTime(allSongs), name, id);
-                pl.setSongList(allSongs);
+                Playlist pl = new Playlist(id, name);
                 allPlaylists.add(pl);
-
             }
             return allPlaylists; // Returns the playlists
         } catch (SQLException ex) {
@@ -42,13 +37,6 @@ public class PlaylistDAO {
         }
     }
 
-    private int countTotalTime(List<Song> allSongs) {
-        int totalTime = 0;
-        for (Song allSong : allSongs) {
-            totalTime += allSong.getPlaytime();
-        }
-        return totalTime;
-    }
 
     public Playlist createPlaylist(String name) {
         String sql = "INSERT INTO Playlist(name) VALUES (?)";
@@ -57,31 +45,11 @@ public class PlaylistDAO {
             ps.setString(1, name);
             ps.addBatch();
             ps.executeBatch();
-        } catch (SQLServerException ex) {
-            System.out.println(ex);
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        Playlist playlist = new Playlist(0, 0, name, getNewestPlaylist()); //Creates a playlist object and specifies that there are no songs present.
+        Playlist playlist = new Playlist(0, name); //Creates a playlist object and specifies that there are no songs present.
         return playlist;
-    }
-    private int getNewestPlaylist() {
-        int newestID = -1;
-        try (Connection connection = databaseConnector.getConnection()) {
-            String query = "SELECT TOP(1) * FROM Playlist ORDER by id desc";
-            PreparedStatement preparedStmt = connection.prepareStatement(query);
-            ResultSet rs = preparedStmt.executeQuery();
-            while (rs.next()) {
-                newestID = rs.getInt("id");
-            }
-            return newestID;
-        } catch (SQLServerException ex) {
-            System.out.println(ex);
-            return newestID;
-        } catch (SQLException ex) {
-            System.out.println(ex);
-            return newestID;
-        }
     }
 
     public static void main(String[] args) throws SQLException, IOException {

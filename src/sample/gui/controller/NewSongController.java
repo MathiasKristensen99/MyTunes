@@ -28,13 +28,21 @@ import static java.lang.StrictMath.toIntExact;
 
 public class NewSongController implements Initializable {
 
+    @FXML
     public TextField titleField;
+    @FXML
     public TextField artistField;
+    @FXML
     public TextField timeField;
+    @FXML
     public TextField urlField;
+    @FXML
     public TextField genreField;
+    @FXML
     public Button saveButton;
+    @FXML
     public TextField idField;
+    @FXML
     private javafx.scene.control.Button cancelButton;
 
 

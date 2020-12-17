@@ -17,7 +17,7 @@
       <TextField fx:id="artistField" layoutX="197.0" layoutY="118.0" />
       <TextField fx:id="timeField" layoutX="197.0" layoutY="196.0" />
       <TextField fx:id="urlField" layoutX="197.0" layoutY="240.0" prefHeight="26.0" prefWidth="149.0" />
-      <Button layoutX="362.0" layoutY="241.0" mnemonicParsing="false" onAction="#chooseFileMethod" text="Choose..." />
+      <Button fx:id="btnChoose" layoutX="362.0" layoutY="241.0" mnemonicParsing="false" onAction="#chooseFileMethod" text="Choose..." />
       <Button fx:id="cancelButton" layoutX="197.0" layoutY="322.0" mnemonicParsing="false" onAction="#cancelButtonAction" onMouseClicked="#cancelClicked" text="Cancel" />
       <Button fx:id="saveButton" layoutX="305.0" layoutY="322.0" mnemonicParsing="false" onAction="#saveSong" text="Save" />
       <TextField fx:id="genreField" layoutX="197.0" layoutY="156.0" prefHeight="25.0" prefWidth="149.0" />

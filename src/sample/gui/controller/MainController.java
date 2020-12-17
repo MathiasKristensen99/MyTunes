@@ -31,13 +31,21 @@ public class MainController implements Initializable  {
 
 
     // All the JavaFX functions used in the fxml files
+    @FXML
     public Slider volumeSlider;
+    @FXML
     public Button btnStop;
+    @FXML
     public TextField searchTextField;
+    @FXML
     public Button btnSearch;
+    @FXML
     public Label lblCurrentSong;
+    @FXML
     public Button btnPlay;
+    @FXML
     public Button btnForward;
+    @FXML
     public Button btnBack;
 
     @FXML

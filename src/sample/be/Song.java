@@ -5,14 +5,9 @@ public class Song {
     private String title;
     private String artist;
     private String genre;
-
-
     private final int playtime;
     private final int ID;
-    private String path;
     private String Location;
-
-
 
     public Song(String title, String artist, String genre, String location, int playtime, int id) {
 
@@ -28,16 +23,15 @@ public class Song {
         setGenre(genre);
     }
 
+    /**
+     *  Get and set methods for the different variables we have declared.
+    **/
     public String getLocation() {
         return Location;
     }
 
     public void setLocation(String location) {
         Location = location;
-    }
-
-    public String getTitleProperty() {
-        return title;
     }
 
     public String getTitle() {

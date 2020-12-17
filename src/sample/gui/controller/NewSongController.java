@@ -1,6 +1,5 @@
 package sample.gui.controller;
 
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -36,17 +35,13 @@ public class NewSongController implements Initializable {
     public TextField genreField;
     public Button saveButton;
     public TextField idField;
-    @FXML
     private javafx.scene.control.Button cancelButton;
-    @FXML
 
+
+    // Creating objects
     private final SongModel songModel = new SongModel();
     private final MainController mainController = new MainController();
-    private String path;
     private MediaPlayer mediaPlayer;
-    private boolean isEditing = false;
-    private Song songToEdit;
-
 
     public NewSongController() throws IOException {
     }
@@ -56,13 +51,19 @@ public class NewSongController implements Initializable {
 
     }
 
+    /**
+     * Using the FileChooser method from JavaFX to select a music file
+     * Using the tika.parser and a contenthandler libary to automatically fill the metadata, this doesn't work full.
+     * @param actionEvent
+     */
+
     public void chooseFileMethod(javafx.event.ActionEvent actionEvent) throws FileNotFoundException {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
-        FileChooser fileChooser = new FileChooser();
+        FileChooser fileChooser = new FileChooser(); // Creating a new FileChoose object
         fileChooser.setTitle("Choose file");
         File file = fileChooser.showOpenDialog(stage);
         if (file.toString() != null) {
-            String location = file.toString().replaceAll("\\\\", "/");
+            String location = file.toString().replaceAll("\\\\", "/"); // Replacing the url, so we get the correct location
             try {
                 InputStream inputStream = new FileInputStream(new File(location));
                 ContentHandler contentHandler = new DefaultHandler();
@@ -80,10 +81,11 @@ public class NewSongController implements Initializable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            urlField.setText(location);
+            urlField.setText(location); // Filling the urlField with the location
         }
     }
 
+    // Closing the window
     @FXML
     private void cancelButtonAction() {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
@@ -93,6 +95,11 @@ public class NewSongController implements Initializable {
     public void cancelClicked(MouseEvent mouseEvent) {
     }
 
+    /**
+     * Method used to saving a song by getting the text from the text field,
+     * and creating a new song object by calling the addSong method from the songModel class
+     * @param actionEvent
+     */
     public void saveSong(javafx.event.ActionEvent actionEvent) {
         String title = titleField.getText();
         String artist = artistField.getText();

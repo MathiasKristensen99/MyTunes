@@ -14,9 +14,16 @@ public class PlaylistDAO {
     private DatabaseDAO databaseConnector;
 
     public PlaylistDAO() throws IOException {
-        databaseConnector = new DatabaseDAO();
+        databaseConnector = new DatabaseDAO(); //Database object used to creating the connection
     }
 
+    /**
+     * Methods to getting and creating the playlists in the database.
+     * In the current state, these doesn't do anything.
+     * @return
+     */
+
+    //Getting the playlists using the SELECT FROM SQL command. Storing the playlists ind a list. And defining the labels where we collect the data.
     public List<Playlist> getAllPlaylists() {
         List<Playlist> allPlaylists = new ArrayList<>();
 
@@ -37,6 +44,7 @@ public class PlaylistDAO {
         }
     }
 
+    //Creating a playlist using the INSERT INTO SQL command.
     public Playlist createPlaylist(String name) {
         String sql = "INSERT INTO Playlist(name) VALUES (?)";
         try (Connection connection = databaseConnector.getConnection()) {
@@ -51,6 +59,7 @@ public class PlaylistDAO {
         return playlist;
     }
 
+    //Test to print the existing playlists
     public static void main(String[] args) throws SQLException, IOException {
         PlaylistDAO playlistDAO = new PlaylistDAO();
 

@@ -18,30 +18,22 @@ public class PlaylistModel {
         playlistManager = new PlaylistManager();
     }
 
+    /**
+     * Method for getting the playlists
+     * @return
+     */
     public ObservableList<Playlist> getAllPlaylists() {
         allPlaylists = FXCollections.observableArrayList();
         allPlaylists.addAll(playlistManager.getAllPlaylists());
         return allPlaylists;
     }
 
+    /**
+     * Method to create a new playlist
+     * @param name
+     */
     public void createPlaylist (String name) {
         playlistManager.createPlaylist(name);
     }
-    /*
-    public void deletePlaylist (Playlist playlist) {
-        playlistManager.deletePlaylist(playlist);
-    }
 
-    public void editPlaylist(Playlist playlist, String name) {
-        playlistManager.editPlaylist(playlist, name);
-    }
-
-    public Song addToPlaylist (Playlist playlist, Song song) {
-        return playlistManager.addToPlaylist(playlist, song);
-    }
-
-    public void removeSongFromPlaylist (Playlist selectedItem, Song selectedSong) {
-        playlistManager.removeSongFromPlaylist(selectedItem, selectedSong);
-    }
-     */
 }

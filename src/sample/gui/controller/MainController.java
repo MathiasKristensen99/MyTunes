@@ -30,6 +30,7 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable  {
 
 
+    // All the JavaFX functions used in the fxml files
     public Slider volumeSlider;
     public Button btnStop;
     public TextField searchTextField;
@@ -46,8 +47,6 @@ public class MainController implements Initializable  {
     @FXML
     private TableView<Playlist> tableAllPlaylists;
     @FXML
-    private ListView listViewSongs;
-    @FXML
     private TableColumn<Song, String> songTitle;
     @FXML
     private TableColumn<Song, String> songArtist;
@@ -57,26 +56,25 @@ public class MainController implements Initializable  {
     private TableColumn<Song, Integer> songTime;
     @FXML
     private TableColumn<Song, String> playlistName;
-    @FXML
-    private TableColumn<Song, Integer> playlistSongs;
-    @FXML
-    private TableColumn<Song, Integer> playlistTime;
 
     private MediaPlayer mediaPlayer;
     private int currentSongPlaying = 0;
     private final SongModel songModel;
     private final PlaylistModel playlistModel = new PlaylistModel();
+
+    // Observablelists for the songs and playlists
     private ObservableList<Playlist> allPlaylists = FXCollections.observableArrayList();
     private ObservableList<Song> allSongs = FXCollections.observableArrayList();
 
 
     public MainController() throws IOException {
-        songModel = new SongModel();
+        songModel = new SongModel(); // Creating a songModel object, where most of the methods are
     }
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        // Initializing the table, and filling the columns
         allSongs = songModel.getAllSongs();
         songTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         songArtist.setCellValueFactory(new PropertyValueFactory<>("artist"));
@@ -84,10 +82,7 @@ public class MainController implements Initializable  {
         songTime.setCellValueFactory(new PropertyValueFactory<>("playtime"));
         tableAllsongs.setItems(allSongs);
 
-        //allPlaylists = playlistModel.getAllPlaylists();
         playlistName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        playlistTime.setCellValueFactory(new PropertyValueFactory<>("totalTime"));
-        playlistSongs.setCellValueFactory(new PropertyValueFactory<>("allSongs"));
         tableAllPlaylists.setItems(allPlaylists);
 
     }
@@ -97,7 +92,7 @@ public class MainController implements Initializable  {
         tableAllPlaylists.setItems(playlistModel.getAllPlaylists());
     }
 
-    //open new song scene
+    // Button for opening the scene where we create a new song
     public void newButtonAction(ActionEvent actionEvent) throws IOException {
         Parent root1;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/gui/view/NewSong.fxml"));
@@ -109,13 +104,14 @@ public class MainController implements Initializable  {
         stage.show();
     }
 
-    //Close the application
+    // Closing the application
     @FXML
     private void closeButtonAction() {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
 
+    // Button for opening a scene to create a new playlist
     public void playlistNewButtonAction(ActionEvent actionEvent)throws IOException {
         Parent root2;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/gui/view/Playlist.fxml"));
@@ -127,6 +123,7 @@ public class MainController implements Initializable  {
         stage.show();
     }
 
+    // Button for playing a song
     public void playSong(ActionEvent actionEvent) {
         if (mediaPlayer == null && tableAllsongs.getSelectionModel().getSelectedIndex() != -1) {
             currentSongPlaying = tableAllsongs.getSelectionModel().getSelectedIndex();
@@ -134,33 +131,41 @@ public class MainController implements Initializable  {
         }
     }
 
+    // Button for stopping a song if the mediaplayer object is playing a song, and setting the mediaplayer object to null
     public void stopSong(ActionEvent actionEvent) {
         if (mediaPlayer != null) {
             mediaPlayer.stop();
-            lblCurrentSong.setText("No song is playing");
+            lblCurrentSong.setText("No song is playing"); // Label used to display that no song is currently playing
             mediaPlayer = null;
         }
     }
 
+    /**
+     * Creating a new Mediaplayer object, and filling it by assigning a file from the song table
+     * Setting the volume to 50
+     */
     private void play() {
         mediaPlayer = new MediaPlayer(new Media(new File(tableAllsongs.getItems().get(currentSongPlaying).getLocation()).toURI().toString()));
         tableAllsongs.getSelectionModel().clearAndSelect(currentSongPlaying);
         mediaPlayer.play();
         mediaPlayer.setVolume(50);
-        lblCurrentSong.setText(tableAllsongs.getItems().get(currentSongPlaying).getTitle().toString());
+        lblCurrentSong.setText(tableAllsongs.getItems().get(currentSongPlaying).getTitle().toString()); // A label so we can see which song is currently being played
     }
 
+    // Refreshing the song table
     public void refreshSongs(ActionEvent actionEvent) {
         tableAllsongs.getItems().clear();
         tableAllsongs.setItems(songModel.getAllSongs());
     }
 
+    // Deleting a song by calling the method from the songModel class
     public void deleteSong(ActionEvent actionEvent) {
         if (tableAllsongs.getSelectionModel().getSelectedIndex() != -1) {
             songModel.deleteSong(tableAllsongs.getSelectionModel().getSelectedItem());
         }
     }
 
+    // If there is a song title in the search field, pressing the button will search for a song containing the given title
     public void searchSong(ActionEvent actionEvent) {
         if (searchTextField.getText() == null || searchTextField.getText().length() <= 0) {
             tableAllsongs.setItems(songModel.getAllSongs());
@@ -173,6 +178,7 @@ public class MainController implements Initializable  {
         }
     }
 
+    // If pressed while playing a song, the current song will stop and skip forward to the next song
     public void skipForward(ActionEvent actionEvent) {
         if (tableAllsongs.getSelectionModel().getSelectedIndex() != -1) {
             mediaPlayer.stop();
@@ -186,6 +192,7 @@ public class MainController implements Initializable  {
         }
     }
 
+    // If pressed while playing a song, the current song will stop, and play the previous song in the table
     public void skipBack(ActionEvent actionEvent) {
         if (tableAllsongs.getSelectionModel().getSelectedIndex() != -1) {
             mediaPlayer.stop();
@@ -198,6 +205,11 @@ public class MainController implements Initializable  {
             play();
         }
     }
+
+    /**
+     * Buttons which are not used in the current state of the program
+     * @param mouseEvent
+     */
 
     public void editPlaylistClicked(MouseEvent mouseEvent) {
     }

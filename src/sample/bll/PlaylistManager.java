@@ -11,11 +11,15 @@ public class PlaylistManager {
     private final PlaylistDAO playlistDAO;
 
     public PlaylistManager() throws IOException {
-        playlistDAO = new PlaylistDAO();
+        playlistDAO = new PlaylistDAO(); //New playlist object
     }
 
+    /**
+     * Method for creating and getting the playlists, in the current state this doesn't work.
+     * @param name
+     * @return
+     */
     public Playlist createPlaylist(String name) {
-
         return playlistDAO.createPlaylist(name);
     }
 

@@ -14,7 +14,10 @@ public class Playlist {
         this.ID = ID;
     }
 
-
+    /**
+     * Get and set methods for the different variables we have declared.
+     * @return
+     */
     public List<Song> getPlaylist() {
         return playlist;
     }
@@ -31,10 +34,6 @@ public class Playlist {
         this.playlistName = playlistName;
     }
 
-    public void setSongList(List<Song> songList) {
-        this.playlist = songList;
-    }
-
     public int getID() {
         return ID;
     }
@@ -42,11 +41,5 @@ public class Playlist {
     public void setID(int ID) {
         this.ID = ID;
     }
-    
-
-    public Song getSong(int currentSongIndex) {
-        return playlist.get(currentSongIndex);
-    }
-
 
 }

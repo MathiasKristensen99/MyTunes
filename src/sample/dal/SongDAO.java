@@ -23,14 +23,14 @@ public class SongDAO {
             String sqlStatement = "SELECT * FROM Song";
             Statement statement = connection.createStatement();
             if (statement.execute(sqlStatement)) {
-                ResultSet rs = statement.getResultSet();
-                while (rs.next()) {
-                    String title = rs.getString("title");
-                    String artist = rs.getString("artist");
-                    String genre = rs.getString("genre");
-                    String location = rs.getString("location");
-                    int playtime = rs.getInt("playtime");
-                    int ID = rs.getInt("ID");
+                ResultSet resultSet = statement.getResultSet();
+                while (resultSet.next()) {
+                    String title = resultSet.getString("title");
+                    String artist = resultSet.getString("artist");
+                    String genre = resultSet.getString("genre");
+                    String location = resultSet.getString("location");
+                    int playtime = resultSet.getInt("playtime");
+                    int ID = resultSet.getInt("ID");
 
                     Song song = new Song(title,artist,genre,location, playtime, ID);
                     allSongs.add(song);
@@ -84,7 +84,7 @@ public class SongDAO {
 
     public Song updateSong(Song song, String title, String artist, String genre, int playtime, String location) {
         try (Connection connection = databaseConnector.getConnection()) {
-            String query = "UPDATE Song set name = ?,artist = ?,genre = ?,time = ?,url = ? WHERE id = ?";
+            String query = "UPDATE Song set name = ?,artist = ?,genre = ?,time = ?,location = ? WHERE id = ?";
             PreparedStatement preparedStmt = connection.prepareStatement(query);
             preparedStmt.setString(1, title);
             preparedStmt.setString(2, artist);

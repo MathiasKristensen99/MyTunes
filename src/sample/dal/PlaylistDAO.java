@@ -30,13 +30,12 @@ public class PlaylistDAO {
                 Playlist pl = new Playlist(id, name);
                 allPlaylists.add(pl);
             }
-            return allPlaylists; // Returns the playlists
+            return allPlaylists;
         } catch (SQLException ex) {
             System.out.println(ex);
             return null;
         }
     }
-
 
     public Playlist createPlaylist(String name) {
         String sql = "INSERT INTO Playlist(name) VALUES (?)";
@@ -48,7 +47,7 @@ public class PlaylistDAO {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        Playlist playlist = new Playlist(0, name); //Creates a playlist object and specifies that there are no songs present.
+        Playlist playlist = new Playlist(0, name);
         return playlist;
     }
 
